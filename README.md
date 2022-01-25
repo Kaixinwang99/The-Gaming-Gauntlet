@@ -3,11 +3,6 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 
 <!-- PROJECT SHIELDS -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 
@@ -34,14 +29,14 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 
  
 ## Table of Contects
-
 - [Introduction](#Introduction)
 - [Installing](#Installing)  
-  - [Configuration Requirements](#Configuration Requirements)
-  - [Install steps](#Install steps)
-- [Project Architecture](#Project Architecture)
+  - [Configuration-Requirements](#Configuration-Requirements)
+  - [Install-steps](#Install-steps)
+- [Usage](#Usage)  
+- [Project-Architecture](#Project-Architecture)
 - [Contributing](#Contributing)
-- [Version Control](#Version Control)
+- [Version-Control](#Version-Control)
 - [License](#License)
 - [Acknowledgements](#Acknowledgements)
 
@@ -49,20 +44,21 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 The Gaming Glove is a new generation controller that aiming to show the world a new way for people interact with concoles.
 ### Installing
 
-###### Configuration Requirements
+###### Configuration-Requirements
 
 1. Linux environment 
 2. C++
 
-###### Install steps
+###### Install-steps
 
 1. Clone the repo
 
 ```sh
 git clone https://github.com/Kaixinwang99/The-Gaming-Glove/.git
 ```
-
-### Project Architecture
+### Usage
+a small video demo
+### Project-Architecture
 a random example in the website
 eg:
 
@@ -89,13 +85,13 @@ filetree
 ### Contributing
 
 The project is built by a team from MSc student in University of Glasgow
--[Kaixin Wang](https://github.com/Kaixinwang99) 
--[Abhijith Vajjal Sampathkrishna](https://github.com/ajsampathk) 
--[Natalia Ibagon](https://github.com/nibagon) 
--[Marycarmen Flores Lopez](https://github.com/marycarmen1999) 
+* [Kaixin Wang](https://github.com/Kaixinwang99) 
+* [Abhijith Vajjal Sampathkrishna](https://github.com/ajsampathk) 
+* [Natalia Ibagon](https://github.com/nibagon) 
+* [Marycarmen Flores Lopez](https://github.com/marycarmen1999) 
 
 
-### Version Control
+### Version-Control
 
 This project is using Git to control the version, you can check the repository to see the avilabe version
 
