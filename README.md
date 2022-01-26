@@ -8,7 +8,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 
 <p align="center">
   <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.jpeg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">"The Gaming Gauntlet</h3>
