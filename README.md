@@ -1,4 +1,4 @@
-# The Gaming Glove
+# The Gaming Gauntlet
 University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 
 <!-- PROJECT SHIELDS -->
@@ -7,22 +7,22 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 <br />
 
 <p align="center">
-  <a href="https://github.com/Kaixinwang99/The-Gaming-Glove/">
+  <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">"The Gaming Glove</h3>
+  <h3 align="center">"The Gaming Gauntlet</h3>
   <p align="center">
     A new generation controller
     <br />
-    <a href="https://github.com/Kaixinwang99/The-Gaming-Glove/"><strong>Get to know our gaming glove »</strong></a>
+    <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/"><strong>Get to know our gaming gauntlet »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Kaixinwang99/The-Gaming-Glove/">Demo</a>
+    <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/">Demo</a>
     ·
-    <a href="https://github.com/Kaixinwang99/The-Gaming-Glove/issues">Report Bug</a>
+    <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Kaixinwang99/The-Gaming-Glove/issues">Add new feature</a>
+    <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/issues">Add new feature</a>
   </p>
 
 </p>
@@ -41,7 +41,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 - [Acknowledgements](#Acknowledgements)
 
 ### Introduction 
-The Gaming Glove is a new generation controller that aiming to show the world a new way for people interact with concoles.
+The Gaming Gauntlet is a new generation controller that aiming to show the world a new way for people interact with concoles.
 ### Installing
 
 ###### Configuration-Requirements
@@ -54,7 +54,7 @@ The Gaming Glove is a new generation controller that aiming to show the world a 
 1. Clone the repo
 
 ```sh
-git clone https://github.com/Kaixinwang99/The-Gaming-Glove/.git
+git clone https://github.com/Kaixinwang99/The-Gaming-Gauntlet.git
 ```
 ### Usage
 a small video demo
