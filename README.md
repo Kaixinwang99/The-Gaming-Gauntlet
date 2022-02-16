@@ -30,6 +30,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
  
 ## Table of Contects
 - [Introduction](#Introduction)
+  - [Compatible-Games-and-keys](#Compatible-Games-and-Keys)
 - [Installing](#Installing)  
   - [Configuration-Requirements](#Configuration-Requirements)
   - [Install-steps](#Install-steps)
@@ -42,6 +43,51 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 
 ### Introduction 
 The Gaming Gauntlet is a new generation controller that aiming to show the world a new way for people interact with concoles.
+
+###### Compatible-Games-and-Keys
+<b>Minecraft</b> 
+|Controller Key|Glove Commands|
+|--------------|--------------|
+| A | Button 1 |
+| S | Button 2 |
+| D | Button 3 |
+| W | Button 4 |
+| E | Close Hand |
+| Space | Flex wrist up |
+| Rotate Mouse| Move Hand in front of the screen |
+| Left Click | Flex Thumb |
+
+
+<b>NFS</b>
+|Controller Key|Glove Commands|
+|--------------|--------------|
+| W | Close Hand |
+| S | Wrist upside down+ fingers closed  |
+| Left/Right arrow | Rotate wrist  |
+| Shift | Button 3+4  |
+| Space | - |
+| C | Flex thumb |
+
+<b>Doom</b>
+|Controller Key|Glove Commands|
+|--------------|--------------|
+| A | Button 1 |
+| A | Button 1 |
+| A | Button 1 |
+| A | Button 1 |
+| A | Button 1 |
+| A | Button 1 |
+
+<b>Mario Kart (64) pc</b>
+|Controller Key|Glove Commands|
+|--------------|--------------|
+| K | Close Hadnd |
+| J | Button 1 |
+| Left/Right (A/S) | Move hand in front of the screen |
+| L | Move L/R +Button 3+4   |
+| E | Wrist up |
+    
+
 ### Installing
 
 ###### Configuration-Requirements
