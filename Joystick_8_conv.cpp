@@ -5,7 +5,7 @@
 //TODO: 3-byte struct 
 class Joystick_8(){
     public:
-        std::thread thread_lock();// what does this do? is this the same comand as in the py code?
+        std::thread thread_lock();// what does this do? 
         int x_axis =0; // should I put them to zero in public?
         int y_axis = 0;
         int my_buttons = 0;
