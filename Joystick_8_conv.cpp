@@ -5,26 +5,26 @@
 //TODO: 3-byte struct 
 class Joystick_8(){
     public:
-        std::thread thread_lock();// what does this do? 
-        int x_axis =0; // should I put them to zero in public?
+        int x_axis =0;
         int y_axis = 0;
         int my_buttons = 0;
 
     void begin(std::string devname){
-        //there is no 'with' command in cpp
+        
         std::ofstream devhandle; //should I make this public? Look function end uses it.
         devhandle.open (devname, ios::out | ios::binary);
         x_axis =0;
         y_axis = 0;
         my_buttons = 0;
-        devhandle.write (x_axis,y_axis,my_buttons); //What do I write here
+        devhandle.write(); 
+        
     };
     void end(){
         devhandle.close();
         x_axis =0;
         y_axis = 0;
         my_buttons = 0;
-        devhandle.write(x_axis,y_axis,my_buttons);
+        devhandle.write();
     };
     void write(){
         devhandle.write();// there is no built in serialization in cpp
@@ -32,29 +32,29 @@ class Joystick_8(){
     };
     void press(int button_number){
         my_buttons |= (1<<button_number);
-        devhandle.write(my_buttons);
-        //Missing 'with'
+        devhandle.write();
+        
     };
     void release(int button_number){
         my_buttons &= ~(1<<button_number);
-        devhandle.write(my_buttons);
-        //missing 'with'
+        devhandle.write();
+        
     };
     void releaseAll(){
         my_buttons=0;
-        devhandle.write(my_buttons);
-    };   //missing 'with'
+        devhandle.write();
+    };   
     void buttons (int buttons){
         my_buttons = buttons;
-        devhandle.write(my_buttons);
+        devhandle.write();
     };
     void xAxis(int position){
         x_axis = position;
-        devhandle.write(x_axis);
+        devhandle.write();
     }
     void yAxis (int position){
         y_axis = position;
-        devhandle.write(y_axis);
+        devhandle.write();
     }
     
 }
