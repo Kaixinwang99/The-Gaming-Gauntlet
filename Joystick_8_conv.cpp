@@ -2,7 +2,7 @@
 #include <thread>
 #include <mutex>
 #include <fstream>   
-
+//TODO: 3-byte struct 
 class Joystick_8(){
     public:
         std::thread thread_lock();// what does this do? is this the same comand as in the py code?
