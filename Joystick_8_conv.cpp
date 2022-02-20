@@ -17,14 +17,14 @@ class Joystick_8(){
         x_axis =0;
         y_axis = 0;
         my_buttons = 0;
-        devhandle.write (); //What do I write here
+        devhandle.write (x_axis,y_axis,my_buttons); //What do I write here
     };
     void end(){
         devhandle.close();
         x_axis =0;
         y_axis = 0;
         my_buttons = 0;
-        devhandle.write();
+        devhandle.write(x_axis,y_axis,my_buttons);
     };
     void write(){
         devhandle.write();// there is no built in serialization in cpp
@@ -32,17 +32,17 @@ class Joystick_8(){
     };
     void press(int button_number){
         my_buttons |= (1<<button_number);
-        devhandle.write();
+        devhandle.write(my_buttons);
         //Missing 'with'
     };
     void release(int button_number){
         my_buttons &= ~(1<<button_number);
-        devhandle.write();
+        devhandle.write(my_buttons);
         //missing 'with'
     };
     void releaseAll(){
         my_buttons=0;
-        devhandle.write();
+        devhandle.write(my_buttons);
     };   //missing 'with'
     void buttons (int buttons){
         my_buttons = buttons;
