@@ -26,3 +26,23 @@ target_include_directories(${PROJECT_NAME} PUBLIC JoyLib)
 
 target_link_libraries(${PROJECT_NAME} JoyLib)
 ```
+### Testing
+Unit tests are written in the GTest framework. tests/JoyTest.cpp contains all the tests. 
+The testing framework depends on GoogleTest, so to install and set up the gtest library, run the following commands:
+```
+sudo apt install libgtest-dev
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+sudo cp *.a /usr/lib
+```
+This will install and set up gtest to be used with cmake. Refer to the CMakeLists.txt in the tests folder to see implementation.
+
+#### Running tests
+To build and run tests, go to the root project folder which is JoyController. Build all the libraries and then run the test.
+```
+cd buld          #go to the build dir to keep the root dir clean 
+cmake ..         #build all the objects
+make             #create executables
+./tests/JoyTest  #run the test
+```
