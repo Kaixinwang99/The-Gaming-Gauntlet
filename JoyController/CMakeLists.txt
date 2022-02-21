@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(JoyController VERSION 0.1.0)
 
-include(CTest)
+# find_package(GTest)
+# include_directories(${GTEST_INCLUDE_DIRS})
+
 enable_testing()
 
 add_executable(JoyController main.cpp)
