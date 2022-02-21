@@ -1,0 +1,1 @@
+add_library(JoyLib JoyLib.cpp)
