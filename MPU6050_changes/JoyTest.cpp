@@ -3,59 +3,38 @@
 #include <math.h>
 #include <time.h>
 
-MPU6050 device(0x68,false);
+MPU6050 device(0x68,false); //Initialize MPU 
 
 
 int main() {
-	float  gr, gp, gy; //Variables to store the accel, gyro and angle values
+	float  gr, gp, gy; //Varaibles to store gyro values
 	bool first=true;
-	float x=0,y=0;
+	float x=0,y=0,prev_gr=0,prev_gp=0;
         struct timespec now;
-	long int prev,diff;
-	//Calculate the offsets
-/*	std::cout << "Calculating the offsets...\n    Please keep the accelerometer level and still\n    This could take a couple of minutes...";
-	device.getOffsets(&ax, &ay, &az, &gr, &gp, &gy);
-	std::cout << "Gyroscope R,P,Y: " << gr << "," << gp << "," << gy << "\nAccelerometer X,Y,Z: " << ax << "," << ay << "," << az << "\n";
-*/
+	long int prev,dt;
 
-	//Read the current yaw angle
-	device.calc_yaw = false;
-	clock_gettime(CLOCK_REALTIME,&now);
+	clock_gettime(CLOCK_REALTIME,&now); //record start time 
 	prev = now.tv_nsec;
 	while(true) {
-//		device.getAngle(0, &gr);
-//		device.getAngle(1, &gp);
-//		device.getAngle(2, &gy);
-		device.getGyroRaw(&gr,&gp,&gy);
+
+		device.getGyroRaw(&gr,&gp,&gy); //read gyro values
 		
-		
-		
-		//device.getAccel(&ax,&ay,&az);
-/*		if(first){
-		 x_offset=gr;
-		 y_offset=gp;
-		 first=false;
-		}
-		x = gr-x_offset;
-		y = gp-y_offset;
-		
-		rn = 127*(x/abs(x));
-		pn = 127*(y/abs(y));
-*/
-		gr=gr/131.0;
+		gr=gr/131.0; //convert raw gyro values into approx deg/sec
 		gy=gy/131.0;
-		gr=abs(gr)<0.5?0:gr;
+
+		gr=abs(gr)<0.5?0:gr; //filter to reduce low level noise
 		gy=abs(gy)<0.5?0:gy;
 
-		clock_gettime(CLOCK_REALTIME,&now);
-		diff = now.tv_nsec-prev;
-		x=x+((float)diff/1000000000.0)*gr;
-		y=y+((float)diff/1000000000.0)*gy;
+		clock_gettime(CLOCK_REALTIME,&now); //get time elapsed
+		dt = now.tv_nsec-prev;
 
-		std::cout<<"time:"<<diff<<"\n";
-//		std::cout<<"gr: "<<gr<<" gy: "<<gy<<"\n"<<"x: "<<x<<"y: "<<y<<"\n";
+		x=x+((float)dt/1000000000.0)*((gr-prev_gr)/2.0); //Numerically Integrate over dt(nsec)
+		y=y+((float)dt/1000000000.0)*((gy-prev_gp)/2.0);
 
-		prev = now.tv_nsec;
+		std::cout<<"time:"<<dt<<"\n\n";
+		printf("[Gr]:%0.2f [Gy]:%0.2f\n[x]:%.2f  [y]:%0.2f\n\n",gr,gy,x,y);
+
+		prev = now.tv_nsec; //update strat time
 
 		usleep(10);
 	}
