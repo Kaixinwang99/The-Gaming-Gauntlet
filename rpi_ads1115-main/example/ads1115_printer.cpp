@@ -23,14 +23,14 @@
 // hasSample() and print the ADC reading.
 class ADS1115Printer : public ADS1115rpi {
 	public:
-		int current_channel=3;
+		int current_channel=0;
 		float latest_values[4]={0.0,0.0,0.0,0.0};
 
 		virtual void hasSample(float v) {
 			latest_values[current_channel]=v;
 			printf("[0]:%e|[1]]:%e|[2]:%e|[3]:%e|\n",latest_values[0],latest_values[1],latest_values[2],latest_values[3]);
 			printf("------[Channel]:%d\n",current_channel);
-			current_channel = (current_channel-1)%4;
+			current_channel = (current_channel+1)%4;
 			setChannel((ADS1115settings::Input)current_channel);
 		}
 };
