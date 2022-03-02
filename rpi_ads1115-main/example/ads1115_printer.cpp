@@ -29,6 +29,7 @@ class ADS1115Printer : public ADS1115rpi {
 			latest_values[current_channel]=v;
 			printf("Channel[%d]:%f\n",current_channel,latest_values[current_channel]);
 			current_channel = (current_channel+1)%4;
+			setChannel(current_channel);
 		}
 };
 
