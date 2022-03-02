@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 	fprintf(stderr,"Press any key to stop.\n");
 	ADS1115Printer ads1115rpi;
         ADS1115settings s;
-	s.samplingRate = ADS1115settings::FS64HZ;
+	s.samplingRate = ADS1115settings::FS16HZ;
 	ads1115rpi.start(s);
 	getchar();
 	ads1115rpi.stop();
