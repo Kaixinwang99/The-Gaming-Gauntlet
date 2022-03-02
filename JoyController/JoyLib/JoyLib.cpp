@@ -10,7 +10,7 @@ uint16_t JoyLib::get_axis(){
     return (out_bytes[0]<<8|out_bytes[1]);
 }
 
-bool JoyLib::begin(char* device){
+bool JoyLib::begin(const char* device){
   fout.open(device, std::ios::binary | std::ios::out);
   write();
 

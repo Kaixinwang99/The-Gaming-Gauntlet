@@ -8,7 +8,7 @@
 
 class JoyLib {
     public:
-        bool begin(char* device);
+        bool begin(const char* device);
         bool press(int8_t button);
         bool release(int8_t button);
         bool releaseAll();
