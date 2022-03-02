@@ -27,7 +27,7 @@ class ADS1115Printer : public ADS1115rpi {
 		float latest_values[4];
 		virtual void hasSample(float v) {
 			latest_values[current_channel]=v;
-			printf("Channel[%d]:%f\n",latest_values[current_channel]);
+			printf("Channel[%d]:%f\n",current_channel,latest_values[current_channel]);
 			current_channel = (current_channel+1)%4;
 		}
 };
