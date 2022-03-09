@@ -77,10 +77,10 @@ class icm20948{
         void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);//done
         void set_accelerometer_sample_rate(int rate=125);//done
         void set_accelerometer_full_scale(uint8_t scale=3);//done
-        void set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5);
-        void set_gyro_sample_rate(int rate=125);
-        void set_gyro_full_sclae(int scale=250);
-        void set_gyro_low_pass(bool enabled=true,uint8_t mode=5);
+        void set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5);//done
+        void set_gyro_sample_rate(int rate=125);//done
+        void set_gyro_full_sclae(uint8_t scale=0);//done
+        void set_gyro_low_pass(bool enabled=true,uint8_t mode=5);//done
         float read_temp();
         int bus=1;
     private:

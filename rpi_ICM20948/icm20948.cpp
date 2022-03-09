@@ -159,8 +159,48 @@ void icm20948::set_accelerometer_sample_rate(int rate=125){
 void icm20948::set_accelerometer_full_scale(uint8_t scale=3){
     bank(2);
     uint8_t val = read(ICM20948_ACCEL_CONFIG) & 0b11111001;
-    val |= scale<<1;
+    val = val|(scale<<1);
     write(ICM20948_ACCEL_CONFIG, val);
 
 }
 
+void icm20948::set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5){
+    bank(2);
+    uint8_t val = read(ICM20948_ACCEL_CONFIG) & 0b10001110;
+    if(enabled){
+        val = val | 1;
+    }
+    val = val|(mode&0x07)<<4;
+    write(ICM20948_ACCEL_CONFIG,val);
+}
+
+void icm20948::set_gyro_sample_rate(int rate=125){
+    bank(2);
+    int rate;
+    rate = (int)((1125.0/rate)-1);
+    write(ICM20948_GYRO_SMPLRT_DIV, rate);
+}
+
+void icm20948::set_gyro_full_sclae(uint8_t scale=0){
+    bank(2);
+    uint8_t val = read(ICM20948_GYRO_CONFIG_1) & 0b11111001;
+    val = val| scale << 1;
+    write(ICM20948_GYRO_CONFIG_1, val);
+}
+
+void icm20948::set_gyro_low_pass(bool enabled=true,uint8_t mode=5){
+    bank(2);
+    uint8_t val = read(ICM20948_GYRO_CONFIG_1) & 0b10001110;
+    if(enabled) val|=1;
+    val |=(mode&0x07)<<4;
+    write(ICM20948_GYRO_CONFIG_1, val);
+}
+
+float icm20948::read_temp(){
+    bank(0);
+    uint8_t buff[2];
+    read_bytes(ICM20948_TEMP_OUT_H,buff,2);
+    int16_t temp_raw = buff[0]<<8|buff[1];
+    float temperature_deg_c = ((temp_raw - ICM20948_ROOM_TEMP_OFFSET) / ICM20948_TEMPERATURE_SENSITIVITY) + ICM20948_TEMPERATURE_DEGREES_OFFSET;
+    return temperature_deg_c;
+}
