@@ -1,0 +1,21 @@
+var NAVTREEINDEX0 =
+{
+"annotated.html":[1,0],
+"classJoyLib.html":[1,0,0],
+"classJoyLib.html#a3090a1974ee81cf7feb990d4da5a6e99":[1,0,0,7],
+"classJoyLib.html#a49295bce903786ff851d0676b339376f":[1,0,0,3],
+"classJoyLib.html#a770c0f1ee348830c52ca85bfa4b03ec2":[1,0,0,1],
+"classJoyLib.html#a804bfcc141693752cb7845b6cc4adb90":[1,0,0,2],
+"classJoyLib.html#aa8d76c244beee71b7479d58e25809809":[1,0,0,0],
+"classJoyLib.html#ae8d6120d4cdb32041e397e9df344c170":[1,0,0,4],
+"classJoyLib.html#af7a0d0fdf09adc5797ea6e31fe599e2d":[1,0,0,5],
+"classJoyLib.html#af98cf1c1b286758ec4bc9630706e5201":[1,0,0,6],
+"classes.html":[1,1],
+"files.html":[2,0],
+"functions.html":[1,2,0],
+"functions_func.html":[1,2,1],
+"index.html":[],
+"joylib_8h_source.html":[2,0,0],
+"md_doxy.html":[0],
+"pages.html":[]
+};

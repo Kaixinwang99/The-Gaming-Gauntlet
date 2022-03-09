@@ -1,0 +1,162 @@
+\hypertarget{classJoyLib}{}\doxysection{Joy\+Lib Class Reference}
+\label{classJoyLib}\index{JoyLib@{JoyLib}}
+
+
+This class handles the button and joystick actions.  
+
+
+
+
+{\ttfamily \#include $<$joylib.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classJoyLib_aa8d76c244beee71b7479d58e25809809}{begin}} (const char $\ast$device)
+\item 
+bool \mbox{\hyperlink{classJoyLib_a49295bce903786ff851d0676b339376f}{press}} (int8\+\_\+t button)
+\begin{DoxyCompactList}\small\item\em writes the command of the button pressed (3rd byte) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJoyLib_ae8d6120d4cdb32041e397e9df344c170}{release}} (int8\+\_\+t button)
+\item 
+bool \mbox{\hyperlink{classJoyLib_af7a0d0fdf09adc5797ea6e31fe599e2d}{release\+All}} ()
+\item 
+bool \mbox{\hyperlink{classJoyLib_af98cf1c1b286758ec4bc9630706e5201}{x\+Axis}} (int8\+\_\+t value)
+\item 
+bool \mbox{\hyperlink{classJoyLib_a3090a1974ee81cf7feb990d4da5a6e99}{y\+Axis}} (int8\+\_\+t value)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classJoyLib_a804bfcc141693752cb7845b6cc4adb90}{get\+\_\+buttons}} ()
+\begin{DoxyCompactList}\small\item\em Get the buttons object. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classJoyLib_a770c0f1ee348830c52ca85bfa4b03ec2}{get\+\_\+axis}} ()
+\begin{DoxyCompactList}\small\item\em Get the axis object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles the button and joystick actions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJoyLib_aa8d76c244beee71b7479d58e25809809}\label{classJoyLib_aa8d76c244beee71b7479d58e25809809}} 
+\index{JoyLib@{JoyLib}!begin@{begin}}
+\index{begin@{begin}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool Joy\+Lib\+::begin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_a770c0f1ee348830c52ca85bfa4b03ec2}\label{classJoyLib_a770c0f1ee348830c52ca85bfa4b03ec2}} 
+\index{JoyLib@{JoyLib}!get\_axis@{get\_axis}}
+\index{get\_axis@{get\_axis}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{get\_axis()}{get\_axis()}}
+{\footnotesize\ttfamily uint16\+\_\+t Joy\+Lib\+::get\+\_\+axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the axis object. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_a804bfcc141693752cb7845b6cc4adb90}\label{classJoyLib_a804bfcc141693752cb7845b6cc4adb90}} 
+\index{JoyLib@{JoyLib}!get\_buttons@{get\_buttons}}
+\index{get\_buttons@{get\_buttons}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{get\_buttons()}{get\_buttons()}}
+{\footnotesize\ttfamily uint8\+\_\+t Joy\+Lib\+::get\+\_\+buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the buttons object. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_a49295bce903786ff851d0676b339376f}\label{classJoyLib_a49295bce903786ff851d0676b339376f}} 
+\index{JoyLib@{JoyLib}!press@{press}}
+\index{press@{press}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{press()}{press()}}
+{\footnotesize\ttfamily bool Joy\+Lib\+::press (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{button }\end{DoxyParamCaption})}
+
+
+
+writes the command of the button pressed (3rd byte) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_ae8d6120d4cdb32041e397e9df344c170}\label{classJoyLib_ae8d6120d4cdb32041e397e9df344c170}} 
+\index{JoyLib@{JoyLib}!release@{release}}
+\index{release@{release}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily bool Joy\+Lib\+::release (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{button }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_af7a0d0fdf09adc5797ea6e31fe599e2d}\label{classJoyLib_af7a0d0fdf09adc5797ea6e31fe599e2d}} 
+\index{JoyLib@{JoyLib}!releaseAll@{releaseAll}}
+\index{releaseAll@{releaseAll}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{releaseAll()}{releaseAll()}}
+{\footnotesize\ttfamily bool Joy\+Lib\+::release\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_af98cf1c1b286758ec4bc9630706e5201}\label{classJoyLib_af98cf1c1b286758ec4bc9630706e5201}} 
+\index{JoyLib@{JoyLib}!xAxis@{xAxis}}
+\index{xAxis@{xAxis}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{xAxis()}{xAxis()}}
+{\footnotesize\ttfamily bool Joy\+Lib\+::x\+Axis (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoyLib_a3090a1974ee81cf7feb990d4da5a6e99}\label{classJoyLib_a3090a1974ee81cf7feb990d4da5a6e99}} 
+\index{JoyLib@{JoyLib}!yAxis@{yAxis}}
+\index{yAxis@{yAxis}!JoyLib@{JoyLib}}
+\doxysubsubsection{\texorpdfstring{yAxis()}{yAxis()}}
+{\footnotesize\ttfamily bool Joy\+Lib\+::y\+Axis (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+joylib.\+h\end{DoxyCompactItemize}
