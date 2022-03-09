@@ -65,14 +65,14 @@
 #include <cstdint>
 #include<pigpio.h>
 #include <iostream>
-
+#include <unistd.h>
 
 
 class icm20948{
     
     public:
         icm20948();
-        bool magnetometer_ready();
+        bool magnetometer_ready();//done
         void read_magnetometer_data(float* x,float* y,float* z);
         void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);
         void set_accelerometer_sample_rate(int rate=125);
@@ -84,14 +84,15 @@ class icm20948{
         float read_temp();
         int bus=1;
     private:
-        void mag_read_bytes(uint8_t reg,uint8_t* bytes,int len);
-        void mag_read(uint8_t reg);
-        void mag_write(uint8_t reg);
-        void bank(uint8_t value);
-        void read_bytes(uint8_t reg,uint8_t* bytes,int len);
-        void trigger_mag_io();
-        uint8_t read(uint8_t reg);
-        void write(uint8_t reg,uint8_t value);
+        uint8_t _bank=0;
+        void mag_read_bytes(uint8_t reg,uint8_t* bytes,int len);//done
+        uint8_t mag_read(uint8_t reg); //done
+        void mag_write(uint8_t reg,uint8_t value);//done
+        void bank(uint8_t value);//done
+        void read_bytes(uint8_t reg,uint8_t* bytes,int len);//done
+        void trigger_mag_io();//done
+        uint8_t read(uint8_t reg);//done
+        void write(uint8_t reg,uint8_t value); //done
 };
 
 
