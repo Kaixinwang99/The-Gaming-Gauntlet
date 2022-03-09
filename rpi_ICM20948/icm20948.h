@@ -66,17 +66,17 @@
 #include<pigpio.h>
 #include <iostream>
 #include <unistd.h>
-
+#include <chrono>
 
 class icm20948{
     
     public:
         icm20948();
         bool magnetometer_ready();//done
-        void read_magnetometer_data(float* x,float* y,float* z);
-        void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);
-        void set_accelerometer_sample_rate(int rate=125);
-        void set_accelerometer_full_scale(int scale=16);
+        void read_magnetometer_data(float* x,float* y,float* z,int timeout=1000);//done
+        void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);//done
+        void set_accelerometer_sample_rate(int rate=125);//done
+        void set_accelerometer_full_scale(uint8_t scale=3);//done
         void set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5);
         void set_gyro_sample_rate(int rate=125);
         void set_gyro_full_sclae(int scale=250);
@@ -85,6 +85,9 @@ class icm20948{
         int bus=1;
     private:
         uint8_t _bank=0;
+        float g_scales[4] = {16384.0, 8192.0, 4096.0, 2048.0};
+        float dps_scales[4] = {131.0, 65.5, 32.8, 16.4};
+
         void mag_read_bytes(uint8_t reg,uint8_t* bytes,int len);//done
         uint8_t mag_read(uint8_t reg); //done
         void mag_write(uint8_t reg,uint8_t value);//done

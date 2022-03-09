@@ -95,3 +95,72 @@ void icm20948::mag_read_bytes(uint8_t reg,uint8_t* bytes,int len){
 bool icm20948::magnetometer_ready(){
     return mag_read(AK09916_ST1)&0x01 > 0;
 }
+
+void icm20948::read_magnetometer_data(float* x,float* y,float* z,int timeout=1000){
+    mag_write(AK09916_CNTL2, 0x01);
+    std::chrono::steady_clock::time_point t_start = std::chrono::steady_clock::now();
+    while(!magnetometer_ready()){
+        std::chrono::steady_clock::time_point t_now = std::chrono::steady_clock::now();
+        if(std::chrono::duration_cast<std::chrono::milliseconds>(t_now-t_start).count()>timeout){
+            throw "Timeout reading magnetometer";
+        }
+        usleep(10);
+    }
+    uint8_t buff[6];
+    int16_t _x,_y,_z;
+    mag_read_bytes(AK09916_HXL,buff, 6);
+    _x = buff[1]<<8|buff[0];
+    _y = buff[3]<<8|buff[2];
+    _z = buff[5]<<8|buff[4];
+
+    *x = _x*0.15;
+    *y = _y*0.15;
+    *z = _z*0.15;
+}
+
+void icm20948::read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz){
+    bank(0);
+    uint8_t buff[12];
+    read_bytes(ICM20948_ACCEL_XOUT_H,buff, 12);
+    int16_t _ax,_ay,_az,_gx,_gy,_gz;
+    _ax = buff[0]<<8|buff[1];
+    _ay = buff[2]<<8|buff[3];
+    _az = buff[4]<<8|buff[5];
+
+    _gx = buff[6]<<8|buff[7];
+    _gy = buff[8]<<8|buff[9];
+    _gz = buff[10]<<8|buff[11];
+
+    bank(2);
+    uint8_t acc_scale = read(ICM20948_ACCEL_CONFIG) & 0x06 >> 1;
+    uint8_t gyro_scale = read(ICM20948_GYRO_CONFIG_1) & 0x06 >>1;
+
+    float gs = g_scales[gyro_scale];
+    float dps = dps_scales[acc_scale];
+
+    *ax = (float)_ax / dps;
+    *ay = (float)_ay / dps;
+    *az = (float)_az / dps;
+
+    *gx = (float)_gx / gs;
+    *gy = (float)_gy / gs;
+    *gz = (float)_gz / gs;
+
+}
+
+void icm20948::set_accelerometer_sample_rate(int rate=125){
+    bank(2);
+    int rate;
+    rate = (int)((1125.0/rate)-1);
+    write(ICM20948_ACCEL_SMPLRT_DIV_1, (rate >> 8) & 0xff);
+    write(ICM20948_ACCEL_SMPLRT_DIV_2, rate & 0xff);
+}
+
+void icm20948::set_accelerometer_full_scale(uint8_t scale=3){
+    bank(2);
+    uint8_t val = read(ICM20948_ACCEL_CONFIG) & 0b11111001;
+    val |= scale<<1;
+    write(ICM20948_ACCEL_CONFIG, val);
+
+}
+
