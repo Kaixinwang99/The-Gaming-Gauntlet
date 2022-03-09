@@ -181,7 +181,7 @@ void icm20948::set_gyro_sample_rate(int rate=125){
     write(ICM20948_GYRO_SMPLRT_DIV, rate);
 }
 
-void icm20948::set_gyro_full_sclae(uint8_t scale=0){
+void icm20948::set_gyro_full_scale(uint8_t scale=0){
     bank(2);
     uint8_t val = read(ICM20948_GYRO_CONFIG_1) & 0b11111001;
     val = val| scale << 1;
@@ -203,4 +203,39 @@ float icm20948::read_temp(){
     int16_t temp_raw = buff[0]<<8|buff[1];
     float temperature_deg_c = ((temp_raw - ICM20948_ROOM_TEMP_OFFSET) / ICM20948_TEMPERATURE_SENSITIVITY) + ICM20948_TEMPERATURE_DEGREES_OFFSET;
     return temperature_deg_c;
+}
+
+icm20948::icm20948(uint8_t addr=0x68){
+    bank(0);
+    if(read(ICM20948_WHO_AM_I) != CHIP_ID){
+        throw "Cannot find ICM20948";
+    }
+    write(ICM20948_PWR_MGMT_1, 0x80);
+    usleep(1000);
+    write(ICM20948_PWR_MGMT_1, 0x01);
+    write(ICM20948_PWR_MGMT_2, 0x00);
+
+    bank(2);
+    set_gyro_sample_rate(100);
+    set_gyro_low_pass(true,5);
+    set_gyro_full_scale(0);
+    set_accelerometer_sample_rate(125);
+    set_accelerometer_low_pass(true, 5);
+    set_accelerometer_full_scale(3);
+
+    bank(0);
+    write(ICM20948_INT_PIN_CFG, 0x30);
+
+    bank(3);
+    write(ICM20948_I2C_MST_CTRL, 0x4D);
+    write(ICM20948_I2C_MST_DELAY_CTRL, 0x01);
+
+    if(mag_read(AK09916_WIA) != AK09916_CHIP_ID){
+        throw "unable to find Magnetometer chip";
+    }
+
+    mag_write(AK09916_CNTL3, 0x01);
+    while(mag_read(AK09916_CNTL3) == 0x01){
+        usleep(100);
+    }
 }

@@ -71,7 +71,7 @@
 class icm20948{
     
     public:
-        icm20948();
+        icm20948(uint8_t addr=0x68);//done
         bool magnetometer_ready();//done
         void read_magnetometer_data(float* x,float* y,float* z,int timeout=1000);//done
         void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);//done
@@ -79,12 +79,12 @@ class icm20948{
         void set_accelerometer_full_scale(uint8_t scale=3);//done
         void set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5);//done
         void set_gyro_sample_rate(int rate=125);//done
-        void set_gyro_full_sclae(uint8_t scale=0);//done
+        void set_gyro_full_scale(uint8_t scale=0);//done
         void set_gyro_low_pass(bool enabled=true,uint8_t mode=5);//done
-        float read_temp();
+        float read_temp();//done
         int bus=1;
     private:
-        uint8_t _bank=0;
+        uint8_t _bank=-1;
         float g_scales[4] = {16384.0, 8192.0, 4096.0, 2048.0};
         float dps_scales[4] = {131.0, 65.5, 32.8, 16.4};
 
