@@ -83,10 +83,11 @@ class icm20948{
         void set_gyro_low_pass(bool enabled=true,uint8_t mode=5);//done
         float read_temp();//done
         int bus=1;
+
     private:
-        uint8_t _bank=-1;
+        uint8_t _bank=-1,_addr=I2C_ADDR;
         float g_scales[4] = {16384.0, 8192.0, 4096.0, 2048.0};
-        float dps_scales[4] = {131.0, 65.5, 32.8, 16.4};
+        float dps_scales[4] = {131.0, 65.5, 32.8, 16.40};
 
         void mag_read_bytes(uint8_t reg,uint8_t* bytes,int len);//done
         uint8_t mag_read(uint8_t reg); //done

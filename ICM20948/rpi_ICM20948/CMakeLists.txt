@@ -13,13 +13,8 @@ add_compile_options(-Wall -Wconversion -Wextra -pedantic)
 set(LIBSRC icm20948.cpp)
 set(LIBINCLUDE icm20948.h)
 
-add_library(libicm20948
-  SHARED
+add_library(icm20948
   ${LIBSRC}
-  )
+)
 
-set_target_properties(libicm20948 PROPERTIES
-  SOVERSION 1
-  PUBLIC_HEADER "${LIBINCLUDE}")
-
-target_link_libraries(libicm20948 pigpio)
+target_link_libraries(icm20948 pigpio)

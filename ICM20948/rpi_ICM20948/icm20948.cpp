@@ -96,7 +96,7 @@ bool icm20948::magnetometer_ready(){
     return mag_read(AK09916_ST1)&0x01 > 0;
 }
 
-void icm20948::read_magnetometer_data(float* x,float* y,float* z,int timeout=1000){
+void icm20948::read_magnetometer_data(float* x,float* y,float* z,int timeout){
     mag_write(AK09916_CNTL2, 0x01);
     std::chrono::steady_clock::time_point t_start = std::chrono::steady_clock::now();
     while(!magnetometer_ready()){
@@ -148,15 +148,15 @@ void icm20948::read_accelerometer_gyro_data(float* ax,float* ay,float* az,float*
 
 }
 
-void icm20948::set_accelerometer_sample_rate(int rate=125){
+void icm20948::set_accelerometer_sample_rate(int rate){
     bank(2);
-    int rate;
-    rate = (int)((1125.0/rate)-1);
-    write(ICM20948_ACCEL_SMPLRT_DIV_1, (rate >> 8) & 0xff);
-    write(ICM20948_ACCEL_SMPLRT_DIV_2, rate & 0xff);
+    int out_rate;
+    out_rate = (int)((1125.0/rate)-1);
+    write(ICM20948_ACCEL_SMPLRT_DIV_1, (out_rate >> 8) & 0xff);
+    write(ICM20948_ACCEL_SMPLRT_DIV_2, out_rate & 0xff);
 }
 
-void icm20948::set_accelerometer_full_scale(uint8_t scale=3){
+void icm20948::set_accelerometer_full_scale(uint8_t scale){
     bank(2);
     uint8_t val = read(ICM20948_ACCEL_CONFIG) & 0b11111001;
     val = val|(scale<<1);
@@ -164,7 +164,7 @@ void icm20948::set_accelerometer_full_scale(uint8_t scale=3){
 
 }
 
-void icm20948::set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5){
+void icm20948::set_accelerometer_low_pass(bool enabled,uint8_t mode){
     bank(2);
     uint8_t val = read(ICM20948_ACCEL_CONFIG) & 0b10001110;
     if(enabled){
@@ -174,21 +174,21 @@ void icm20948::set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5){
     write(ICM20948_ACCEL_CONFIG,val);
 }
 
-void icm20948::set_gyro_sample_rate(int rate=125){
+void icm20948::set_gyro_sample_rate(int rate){
     bank(2);
-    int rate;
-    rate = (int)((1125.0/rate)-1);
-    write(ICM20948_GYRO_SMPLRT_DIV, rate);
+    int out_rate;
+    out_rate = (int)((1125.0/rate)-1);
+    write(ICM20948_GYRO_SMPLRT_DIV, out_rate);
 }
 
-void icm20948::set_gyro_full_scale(uint8_t scale=0){
+void icm20948::set_gyro_full_scale(uint8_t scale){
     bank(2);
     uint8_t val = read(ICM20948_GYRO_CONFIG_1) & 0b11111001;
     val = val| scale << 1;
     write(ICM20948_GYRO_CONFIG_1, val);
 }
 
-void icm20948::set_gyro_low_pass(bool enabled=true,uint8_t mode=5){
+void icm20948::set_gyro_low_pass(bool enabled,uint8_t mode){
     bank(2);
     uint8_t val = read(ICM20948_GYRO_CONFIG_1) & 0b10001110;
     if(enabled) val|=1;
@@ -200,12 +200,13 @@ float icm20948::read_temp(){
     bank(0);
     uint8_t buff[2];
     read_bytes(ICM20948_TEMP_OUT_H,buff,2);
-    int16_t temp_raw = buff[0]<<8|buff[1];
+    unsigned int temp_raw = buff[0]<<8|buff[1];
     float temperature_deg_c = ((temp_raw - ICM20948_ROOM_TEMP_OFFSET) / ICM20948_TEMPERATURE_SENSITIVITY) + ICM20948_TEMPERATURE_DEGREES_OFFSET;
     return temperature_deg_c;
 }
 
-icm20948::icm20948(uint8_t addr=0x68){
+icm20948::icm20948(uint8_t addr){
+    _addr=addr;
     bank(0);
     if(read(ICM20948_WHO_AM_I) != CHIP_ID){
         throw "Cannot find ICM20948";
