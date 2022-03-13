@@ -96,7 +96,6 @@ void icm20948::mag_read_bytes(unsigned int reg,uint8_t* bytes,int len){
 
 bool icm20948::magnetometer_ready(){
     uint8_t res = mag_read(AK09916_ST1) ;
-    fprintf(stdout,"%02x\n",res);
     return res&0x01 > 0;
 }
 
@@ -254,7 +253,7 @@ icm20948::icm20948(uint8_t addr){
 
     if(mag_read(AK09916_WIA) != AK09916_CHIP_ID){
         fprintf(stderr,"Cannot find magnetometer:%02x=/=%02x\n",mag_read(AK09916_WIA),AK09916_CHIP_ID);
-        // throw "unable to find Magnetometer chip";
+        throw "unable to find Magnetometer chip";
     }
 
     mag_write(AK09916_CNTL3, 0x01);
