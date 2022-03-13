@@ -249,7 +249,7 @@ icm20948::icm20948(uint8_t addr){
     write(ICM20948_I2C_MST_DELAY_CTRL, 0x01);
 
     if(mag_read(AK09916_WIA) != AK09916_CHIP_ID){
-        fprintf(stderr,"Cannot find magnetometer");
+        fprintf(stderr,"Cannot find magnetometer:%d=/=%d",mag_read(AK09916_WIA),AK09916_CHIP_ID);
         throw "unable to find Magnetometer chip";
     }
 
