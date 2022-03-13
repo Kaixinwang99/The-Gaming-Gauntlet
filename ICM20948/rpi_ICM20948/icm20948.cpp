@@ -102,6 +102,7 @@ void icm20948::read_magnetometer_data(float* x,float* y,float* z,int timeout){
     while(!magnetometer_ready()){
         std::chrono::steady_clock::time_point t_now = std::chrono::steady_clock::now();
         if(std::chrono::duration_cast<std::chrono::milliseconds>(t_now-t_start).count()>timeout){
+            fprintf(stderr,"Timeout Occured");
             throw "Timeout reading magnetometer";
         }
         usleep(10);
@@ -211,6 +212,7 @@ icm20948::icm20948(uint8_t addr){
     int cfg = gpioCfgGetInternals();
     cfg |= PI_CFG_NOSIGHANDLER;
     gpioCfgSetInternals(cfg);
+    fprintf(stdout,"Initializing pigpio");
     int r = gpioInitialise();
     if (r < 0) {
             char msg[] = "Cannot init pigpio.";
@@ -220,10 +222,12 @@ icm20948::icm20948(uint8_t addr){
             throw msg;
     }
 
-    bank(0);
+
     if(read(ICM20948_WHO_AM_I) != CHIP_ID){
+        fprintf(stderr,"Cannot find ICM20948");
         throw "Cannot find ICM20948";
     }
+    bank(0);
     write(ICM20948_PWR_MGMT_1, 0x80);
     usleep(1000);
     write(ICM20948_PWR_MGMT_1, 0x01);
@@ -245,6 +249,7 @@ icm20948::icm20948(uint8_t addr){
     write(ICM20948_I2C_MST_DELAY_CTRL, 0x01);
 
     if(mag_read(AK09916_WIA) != AK09916_CHIP_ID){
+        fprintf(stderr,"Cannot find magnetometer");
         throw "unable to find Magnetometer chip";
     }
 
