@@ -35,7 +35,6 @@ void icm20948::write(unsigned int reg,unsigned int value){
 
 void icm20948::trigger_mag_io(){
     uint8_t user = read(ICM20948_USER_CTRL);
-    fprintf(stdout,"%02x",user);
     write(ICM20948_USER_CTRL, user | 0x20);
     usleep(5000);
     write(ICM20948_USER_CTRL, user);
