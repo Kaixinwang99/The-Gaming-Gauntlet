@@ -250,7 +250,7 @@ icm20948::icm20948(uint8_t addr){
 
     if(mag_read(AK09916_WIA) != AK09916_CHIP_ID){
         fprintf(stderr,"Cannot find magnetometer:%02x=/=%02x\n",mag_read(AK09916_WIA),AK09916_CHIP_ID);
-        throw "unable to find Magnetometer chip";
+        // throw "unable to find Magnetometer chip";
     }
 
     mag_write(AK09916_CNTL3, 0x01);
