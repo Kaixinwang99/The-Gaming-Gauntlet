@@ -207,6 +207,19 @@ float icm20948::read_temp(){
 
 icm20948::icm20948(uint8_t addr){
     _addr=addr;
+
+    int cfg = gpioCfgGetInternals();
+    cfg |= PI_CFG_NOSIGHANDLER;
+    gpioCfgSetInternals(cfg);
+    int r = gpioInitialise();
+    if (r < 0) {
+            char msg[] = "Cannot init pigpio.";
+
+            fprintf(stderr,"%s\n",msg);
+
+            throw msg;
+    }
+
     bank(0);
     if(read(ICM20948_WHO_AM_I) != CHIP_ID){
         throw "Cannot find ICM20948";
