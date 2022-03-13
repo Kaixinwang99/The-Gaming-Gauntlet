@@ -93,7 +93,9 @@ void icm20948::mag_read_bytes(unsigned int reg,uint8_t* bytes,int len){
 }
 
 bool icm20948::magnetometer_ready(){
-    return mag_read(AK09916_ST1)&0x01 > 0;
+    uint8_t res = mag_read(AK09916_ST1) ;
+    fprintf(stdout,"%02x\n",res);
+    return res&0x01 > 0;
 }
 
 void icm20948::read_magnetometer_data(float* x,float* y,float* z,int timeout){
