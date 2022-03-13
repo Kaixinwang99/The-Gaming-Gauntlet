@@ -43,26 +43,26 @@ MPU6050::MPU6050(int8_t addr, bool run_update_thread) {
 
 MPU6050::MPU6050(int8_t addr) : MPU6050(addr, true){}
 
-void MPU6050::getGyroRaw(float *roll, float *pitch, float *yaw) {
+void MPU6050::getGyroRaw(int16_t *roll,int16_t *pitch, int16_t *yaw) {
 	int16_t X = i2c_smbus_read_byte_data(f_dev, 0x43) << 8 | i2c_smbus_read_byte_data(f_dev, 0x44); //Read X registers
 	int16_t Y = i2c_smbus_read_byte_data(f_dev, 0x45) << 8 | i2c_smbus_read_byte_data(f_dev, 0x46); //Read Y registers
 	int16_t Z = i2c_smbus_read_byte_data(f_dev, 0x47) << 8 | i2c_smbus_read_byte_data(f_dev, 0x48); //Read Z registers
 	
-	if(X>32768)X=X-65536; // get signed values 
+/*	if(X>32768)X=X-65536; // get signed values 
 	if(Y>32768)Y=Y-65536;
 	if(Z>32768)Z=Z-65536;
-	// std::cout<<"Gyro Raw values:"<<"\n";
-	*roll = (float)X; //Roll on X axis
-	*pitch = (float)Y; //Pitch on Y axis
-	*yaw = (float)Z; //Yaw on Z axis
+*/	// std::cout<<"Gyro Raw values:"<<"\n";
+	*roll = X; //Roll on X axis
+	*pitch = Y; //Pitch on Y axis
+	*yaw = Z; //Yaw on Z axis
 }
 
-void MPU6050::getGyro(float *roll, float *pitch, float *yaw) {
+/*void MPU6050::getGyro(float *roll, float *pitch, float *yaw) {
 	getGyroRaw(roll, pitch, yaw); //Store raw values into variables
 	*roll = round((*roll - G_OFF_X) * 1000.0 / GYRO_SENS) / 1000.0; //Remove the offset and divide by the gyroscope sensetivity (use 1000 and round() to round the value to three decimal places)
 	*pitch = round((*pitch - G_OFF_Y) * 1000.0 / GYRO_SENS) / 1000.0;
 	*yaw = round((*yaw - G_OFF_Z) * 1000.0 / GYRO_SENS) / 1000.0;
-}
+}*/
 
 void MPU6050::getAccelRaw(float *x, float *y, float *z) {
 	int16_t X = i2c_smbus_read_byte_data(f_dev, 0x3b) << 8 | i2c_smbus_read_byte_data(f_dev, 0x3c); //Read X registers
@@ -80,7 +80,7 @@ void MPU6050::getAccel(float *x, float *y, float *z) {
 	*z = round((*z - A_OFF_Z) * 1000.0 / ACCEL_SENS) / 1000.0;
 }
 
-void MPU6050::getOffsets(float *ax_off, float *ay_off, float *az_off, float *gr_off, float *gp_off, float *gy_off) {
+/*void MPU6050::getOffsets(float *ax_off, float *ay_off, float *az_off, float *gr_off, float *gp_off, float *gy_off) {
 	float gyro_off[3]; //Temporary storage
 	float accel_off[3];
 
@@ -99,7 +99,7 @@ void MPU6050::getOffsets(float *ax_off, float *ay_off, float *az_off, float *gr_
 	*ax_off = *ax_off / 10000, *ay_off = *ay_off / 10000, *az_off = *az_off / 10000;
 
 	*az_off = *az_off - ACCEL_SENS; //Remove 1g from the value calculated to compensate for gravity)
-}
+}*/
 
 int MPU6050::getAngle(int axis, float *result) {
 	if (axis >= 0 && axis <= 2) { //Check that the axis is in the valid range

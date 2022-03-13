@@ -1,5 +1,5 @@
 #include "ads1115rpi.h"
-
+#define DEBUG
 void ADS1115rpi::start(ADS1115settings settings) {
 	ads1115settings = settings;
 
