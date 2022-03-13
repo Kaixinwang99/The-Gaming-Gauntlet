@@ -72,6 +72,7 @@ class icm20948{
     
     public:
         icm20948(uint8_t addr=0x68);//done
+        ~icm20948(){gpioTerminate();}
         bool magnetometer_ready();//done
         void read_magnetometer_data(float* x,float* y,float* z,int timeout=1000);//done
         void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);//done
