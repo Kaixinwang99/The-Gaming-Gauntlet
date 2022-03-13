@@ -222,9 +222,9 @@ icm20948::icm20948(uint8_t addr){
             throw msg;
     }
     bank(0);
-
+    fprintf(stderr,"Cannot find ICM20948:%02x=/=%02x",read(ICM20948_WHO_AM_I),CHIP_ID);
     if(read(ICM20948_WHO_AM_I) != CHIP_ID){
-        fprintf(stderr,"Cannot find ICM20948:%02x=/=%02x",read(ICM20948_WHO_AM_I),CHIP_ID);
+        
         throw "Cannot find ICM20948";
     }
 
