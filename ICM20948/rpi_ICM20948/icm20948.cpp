@@ -1,7 +1,7 @@
 #include "icm20948.h"
 static const char could_not_open_i2c[] = "Could not open I2C.\n";
 
-uint8_t icm20948::read(uint8_t reg){
+uint8_t icm20948::read(unsigned int reg){
     int fd = i2cOpen(bus,I2C_ADDR,0);
     if (fd < 0) {
         fprintf(stderr,"Could not open %02x.\n",I2C_ADDR);
@@ -17,7 +17,7 @@ uint8_t icm20948::read(uint8_t reg){
     return (uint8_t)r;
 }
 
-void icm20948::write(uint8_t reg,uint8_t value){
+void icm20948::write(unsigned int reg,unsigned int value){
     int fd = i2cOpen(bus,I2C_ADDR,0);
     if (fd < 0) {
         fprintf(stderr,"Could not open %02x.\n",I2C_ADDR);
@@ -39,7 +39,7 @@ void icm20948::trigger_mag_io(){
     write(ICM20948_USER_CTRL, user);
 }
 
-void icm20948::read_bytes(uint8_t reg,uint8_t* bytes,int len){
+void icm20948::read_bytes(unsigned int reg,uint8_t* bytes,int len){
     int fd = i2cOpen(bus,I2C_ADDR,0);
     if (fd < 0) {
         fprintf(stderr,"Could not open %02x.\n",I2C_ADDR);
@@ -60,7 +60,7 @@ void icm20948::bank(uint8_t value){
         _bank=value;
     }
 }
-void icm20948::mag_write(uint8_t reg,uint8_t value){
+void icm20948::mag_write(unsigned int reg,uint8_t value){
     bank(3);
     write(ICM20948_I2C_SLV0_ADDR, AK09916_I2C_ADDR);
     write(ICM20948_I2C_SLV0_REG, reg);
@@ -69,7 +69,7 @@ void icm20948::mag_write(uint8_t reg,uint8_t value){
     trigger_mag_io();
 }
 
-uint8_t icm20948::mag_read(uint8_t reg){
+uint8_t icm20948::mag_read(unsigned int reg){
     bank(3);
     write(ICM20948_I2C_SLV0_ADDR, AK09916_I2C_ADDR | 0x80);
     write(ICM20948_I2C_SLV0_REG, reg);
@@ -80,7 +80,7 @@ uint8_t icm20948::mag_read(uint8_t reg){
     return read(ICM20948_EXT_SLV_SENS_DATA_00);
 }
 
-void icm20948::mag_read_bytes(uint8_t reg,uint8_t* bytes,int len){
+void icm20948::mag_read_bytes(unsigned int reg,uint8_t* bytes,int len){
 
     bank(3);
     write(ICM20948_I2C_SLV0_CTRL, 0x80 | 0x08 | len);
@@ -221,13 +221,13 @@ icm20948::icm20948(uint8_t addr){
 
             throw msg;
     }
-
+    bank(0);
 
     if(read(ICM20948_WHO_AM_I) != CHIP_ID){
         fprintf(stderr,"Cannot find ICM20948:%02x=/=%02x",read(ICM20948_WHO_AM_I),CHIP_ID);
         throw "Cannot find ICM20948";
     }
-    bank(0);
+
     write(ICM20948_PWR_MGMT_1, 0x80);
     usleep(1000);
     write(ICM20948_PWR_MGMT_1, 0x01);

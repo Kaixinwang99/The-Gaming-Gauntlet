@@ -89,14 +89,14 @@ class icm20948{
         float g_scales[4] = {16384.0, 8192.0, 4096.0, 2048.0};
         float dps_scales[4] = {131.0, 65.5, 32.8, 16.40};
 
-        void mag_read_bytes(uint8_t reg,uint8_t* bytes,int len);//done
-        uint8_t mag_read(uint8_t reg); //done
-        void mag_write(uint8_t reg,uint8_t value);//done
+        void mag_read_bytes(unsigned int reg,uint8_t* bytes,int len);//done
+        uint8_t mag_read(unsigned int reg); //done
+        void mag_write(unsigned int reg,uint8_t value);//done
         void bank(uint8_t value);//done
-        void read_bytes(uint8_t reg,uint8_t* bytes,int len);//done
+        void read_bytes(unsigned int reg,uint8_t* bytes,int len);//done
         void trigger_mag_io();//done
-        uint8_t read(uint8_t reg);//done
-        void write(uint8_t reg,uint8_t value); //done
+        uint8_t read(unsigned int reg);//done
+        void write(unsigned int reg,unsigned int value); //done
 };
 
 
