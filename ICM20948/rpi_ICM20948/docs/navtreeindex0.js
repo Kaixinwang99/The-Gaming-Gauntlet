@@ -17,6 +17,8 @@ var NAVTREEINDEX0 =
 "classicm20948.html#ab8d09c441a6c796b4c7f028908ab910b":[0,0,0,6],
 "classicm20948.html#acd646c58d04e9139453d99ffe7b504c9":[0,0,0,9],
 "files.html":[1,0],
+"functions.html":[0,2,0],
+"functions_func.html":[0,2,1],
 "icm20948_8h_source.html":[1,0,0],
 "index.html":[],
 "pages.html":[]

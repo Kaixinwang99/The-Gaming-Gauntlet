@@ -68,35 +68,164 @@
 #include <unistd.h>
 #include <chrono>
 
+/**
+ * @brief 
+ * Class for ICM20948 accelerometer, magnetometer and gyroscope 
+ */
+
 class icm20948{
     
     public:
+        /**
+         * @brief Construct a new icm20948 object
+         * 
+         * @param addr 
+         */
         icm20948(uint8_t addr=0x68);//done
         ~icm20948(){gpioTerminate();}
+        /**
+         * @brief 
+         * Initialize sensor 
+         * @return true 
+         * @return false 
+         */
         bool magnetometer_ready();//done
+        /**
+         * @brief 
+         * Reads the data from the magnetometer
+         * @param x pointer to a float where X values of the magnetometer will be stored  
+         * @param y pointer to a float where Y values of the magnetometer will be stored 
+         * @param z pointer to a float where Z values of the magnetometer will be stored  
+         * @param timeout set to 1000 by default 
+         */
         void read_magnetometer_data(float* x,float* y,float* z,int timeout=1000);//done
+        /**
+         * @brief 
+         * Read accelerometer and gyroscope data
+         * @param ax pointer to a float where X values of the accelerometer will be stored 
+         * @param ay pointer to a float where Y values of the accelerometer will be stored
+         * @param az pointer to a float where Z values of the accelerometer will be stored
+         * @param gx pointer to a float where X values of the gyroscope will be stored
+         * @param gy pointer to a float where Y values of the gyroscope will be stored
+         * @param gz pointer to a float where Z values of the gyroscope will be stored
+         */
         void read_accelerometer_gyro_data(float* ax,float* ay,float* az,float* gx,float* gy,float* gz);//done
+        /**
+         * @brief Set the accelerometer sample rate 
+         * 
+         * @param rate set to 125 by default
+         */
         void set_accelerometer_sample_rate(int rate=125);//done
+        /**
+         * @brief Set the accelerometer full scale 
+         * 
+         * @param scale set to 3 by default
+         */
         void set_accelerometer_full_scale(uint8_t scale=3);//done
+        /**
+         * @brief Set the accelerometer low pass filter
+         * 
+         * @param enabled set to True by default 
+         * @param mode set to 5 by default
+         */
         void set_accelerometer_low_pass(bool enabled=true,uint8_t mode=5);//done
+        /**
+         * @brief Set the gyro sample rate 
+         * 
+         * @param rate set to 125 by default 
+         */
         void set_gyro_sample_rate(int rate=125);//done
+        /**
+         * @brief Set the gyro full scale 
+         * 
+         * @param scale set to 0 by default 
+         */
         void set_gyro_full_scale(uint8_t scale=0);//done
+        /**
+         * @brief Set the gyro low pass 
+         * 
+         * @param enabled set to True to default 
+         * @param mode set to 5 by default
+         */
         void set_gyro_low_pass(bool enabled=true,uint8_t mode=5);//done
+        /**
+         * @brief read temperature
+         * 
+         * @return float 
+         */
         float read_temp();//done
         int bus=1;
 
     private:
+        /**
+         * @brief 
+         * 
+         */
         uint8_t _bank=-1,_addr=I2C_ADDR;
+        /**
+         * @brief 
+         * 
+         */
         float g_scales[4] = {16384.0, 8192.0, 4096.0, 2048.0};
+        /**
+         * @brief 
+         * 
+         */
         float dps_scales[4] = {131.0, 65.5, 32.8, 16.40};
-
+        /**
+         * @brief 
+         * 
+         * @param reg 
+         * @param bytes 
+         * @param len 
+         */
         void mag_read_bytes(unsigned int reg,uint8_t* bytes,int len);//done
+        /**
+         * @brief 
+         * 
+         * @param reg 
+         * @return uint8_t 
+         */
         uint8_t mag_read(unsigned int reg); //done
+        /**
+         * @brief 
+         * 
+         * @param reg 
+         * @param value 
+         */
         void mag_write(unsigned int reg,uint8_t value);//done
+        /**
+         * @brief 
+         * 
+         * @param value 
+         */
         void bank(uint8_t value);//done
+        /**
+         * @brief 
+         * 
+         * @param reg 
+         * @param bytes 
+         * @param len 
+         */
         void read_bytes(unsigned int reg,uint8_t* bytes,int len);//done
+        /**
+         * @brief 
+         * 
+         */
         void trigger_mag_io();//done
+        /**
+         * @brief 
+         * 
+         * @param reg 
+         * @return uint8_t 
+         */
         uint8_t read(unsigned int reg);//done
+        /**
+         * @brief 
+         * 
+         * @param reg 
+         * @param value 
+         */
         void write(unsigned int reg,unsigned int value); //done
 };
 

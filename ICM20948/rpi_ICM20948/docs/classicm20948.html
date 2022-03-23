@@ -89,41 +89,46 @@ $(document).ready(function(){initNavTree('classicm20948.html',''); initResizable
 <div class="title">icm20948 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for ICM20948 accelerometer, magnetometer and gyroscope.  
+ <a href="classicm20948.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="icm20948_8h_source.html">icm20948.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c220b32013849d1d14e590f36bfc837"><td class="memItemLeft" align="right" valign="top"><a id="a3c220b32013849d1d14e590f36bfc837"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>icm20948</b> (uint8_t addr=0x68)</td></tr>
+<tr class="memitem:a3c220b32013849d1d14e590f36bfc837"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a3c220b32013849d1d14e590f36bfc837">icm20948</a> (uint8_t addr=0x68)</td></tr>
+<tr class="memdesc:a3c220b32013849d1d14e590f36bfc837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classicm20948.html" title="Class for ICM20948 accelerometer, magnetometer and gyroscope.">icm20948</a> object.  <a href="classicm20948.html#a3c220b32013849d1d14e590f36bfc837">More...</a><br /></td></tr>
 <tr class="separator:a3c220b32013849d1d14e590f36bfc837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88b6fd35b7f342227d0e5c4d882644b1"><td class="memItemLeft" align="right" valign="top"><a id="a88b6fd35b7f342227d0e5c4d882644b1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>magnetometer_ready</b> ()</td></tr>
+<tr class="memitem:a88b6fd35b7f342227d0e5c4d882644b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a88b6fd35b7f342227d0e5c4d882644b1">magnetometer_ready</a> ()</td></tr>
+<tr class="memdesc:a88b6fd35b7f342227d0e5c4d882644b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize sensor.  <a href="classicm20948.html#a88b6fd35b7f342227d0e5c4d882644b1">More...</a><br /></td></tr>
 <tr class="separator:a88b6fd35b7f342227d0e5c4d882644b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a431fe1d6bbb429bcae6c2e96a747d216"><td class="memItemLeft" align="right" valign="top"><a id="a431fe1d6bbb429bcae6c2e96a747d216"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>read_magnetometer_data</b> (float *x, float *y, float *z, int timeout=1000)</td></tr>
+<tr class="memitem:a431fe1d6bbb429bcae6c2e96a747d216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a431fe1d6bbb429bcae6c2e96a747d216">read_magnetometer_data</a> (float *x, float *y, float *z, int timeout=1000)</td></tr>
+<tr class="memdesc:a431fe1d6bbb429bcae6c2e96a747d216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the data from the magnetometer.  <a href="classicm20948.html#a431fe1d6bbb429bcae6c2e96a747d216">More...</a><br /></td></tr>
 <tr class="separator:a431fe1d6bbb429bcae6c2e96a747d216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09da3f4be55287e80aef9e4e83b29e2c"><td class="memItemLeft" align="right" valign="top"><a id="a09da3f4be55287e80aef9e4e83b29e2c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>read_accelerometer_gyro_data</b> (float *ax, float *ay, float *az, float *gx, float *gy, float *gz)</td></tr>
+<tr class="memitem:a09da3f4be55287e80aef9e4e83b29e2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a09da3f4be55287e80aef9e4e83b29e2c">read_accelerometer_gyro_data</a> (float *ax, float *ay, float *az, float *gx, float *gy, float *gz)</td></tr>
+<tr class="memdesc:a09da3f4be55287e80aef9e4e83b29e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read accelerometer and gyroscope data.  <a href="classicm20948.html#a09da3f4be55287e80aef9e4e83b29e2c">More...</a><br /></td></tr>
 <tr class="separator:a09da3f4be55287e80aef9e4e83b29e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a748b3eb84dc19c09939b265d3fd6a3fe"><td class="memItemLeft" align="right" valign="top"><a id="a748b3eb84dc19c09939b265d3fd6a3fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_accelerometer_sample_rate</b> (int rate=125)</td></tr>
+<tr class="memitem:a748b3eb84dc19c09939b265d3fd6a3fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a748b3eb84dc19c09939b265d3fd6a3fe">set_accelerometer_sample_rate</a> (int rate=125)</td></tr>
+<tr class="memdesc:a748b3eb84dc19c09939b265d3fd6a3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the accelerometer sample rate.  <a href="classicm20948.html#a748b3eb84dc19c09939b265d3fd6a3fe">More...</a><br /></td></tr>
 <tr class="separator:a748b3eb84dc19c09939b265d3fd6a3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8d09c441a6c796b4c7f028908ab910b"><td class="memItemLeft" align="right" valign="top"><a id="ab8d09c441a6c796b4c7f028908ab910b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_accelerometer_full_scale</b> (uint8_t scale=3)</td></tr>
+<tr class="memitem:ab8d09c441a6c796b4c7f028908ab910b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#ab8d09c441a6c796b4c7f028908ab910b">set_accelerometer_full_scale</a> (uint8_t scale=3)</td></tr>
+<tr class="memdesc:ab8d09c441a6c796b4c7f028908ab910b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the accelerometer full scale.  <a href="classicm20948.html#ab8d09c441a6c796b4c7f028908ab910b">More...</a><br /></td></tr>
 <tr class="separator:ab8d09c441a6c796b4c7f028908ab910b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d39adf7958ecec034d3a7ac69d1290"><td class="memItemLeft" align="right" valign="top"><a id="a08d39adf7958ecec034d3a7ac69d1290"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_accelerometer_low_pass</b> (bool enabled=true, uint8_t mode=5)</td></tr>
+<tr class="memitem:a08d39adf7958ecec034d3a7ac69d1290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a08d39adf7958ecec034d3a7ac69d1290">set_accelerometer_low_pass</a> (bool enabled=true, uint8_t mode=5)</td></tr>
+<tr class="memdesc:a08d39adf7958ecec034d3a7ac69d1290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the accelerometer low pass filter.  <a href="classicm20948.html#a08d39adf7958ecec034d3a7ac69d1290">More...</a><br /></td></tr>
 <tr class="separator:a08d39adf7958ecec034d3a7ac69d1290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef1e555257d44ab4362691c2f47e51b"><td class="memItemLeft" align="right" valign="top"><a id="a6ef1e555257d44ab4362691c2f47e51b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_gyro_sample_rate</b> (int rate=125)</td></tr>
+<tr class="memitem:a6ef1e555257d44ab4362691c2f47e51b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a6ef1e555257d44ab4362691c2f47e51b">set_gyro_sample_rate</a> (int rate=125)</td></tr>
+<tr class="memdesc:a6ef1e555257d44ab4362691c2f47e51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gyro sample rate.  <a href="classicm20948.html#a6ef1e555257d44ab4362691c2f47e51b">More...</a><br /></td></tr>
 <tr class="separator:a6ef1e555257d44ab4362691c2f47e51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd646c58d04e9139453d99ffe7b504c9"><td class="memItemLeft" align="right" valign="top"><a id="acd646c58d04e9139453d99ffe7b504c9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_gyro_full_scale</b> (uint8_t scale=0)</td></tr>
+<tr class="memitem:acd646c58d04e9139453d99ffe7b504c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#acd646c58d04e9139453d99ffe7b504c9">set_gyro_full_scale</a> (uint8_t scale=0)</td></tr>
+<tr class="memdesc:acd646c58d04e9139453d99ffe7b504c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gyro full scale.  <a href="classicm20948.html#acd646c58d04e9139453d99ffe7b504c9">More...</a><br /></td></tr>
 <tr class="separator:acd646c58d04e9139453d99ffe7b504c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a654436bf5acf967e413cf8dcfd2b8ba2"><td class="memItemLeft" align="right" valign="top"><a id="a654436bf5acf967e413cf8dcfd2b8ba2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_gyro_low_pass</b> (bool enabled=true, uint8_t mode=5)</td></tr>
+<tr class="memitem:a654436bf5acf967e413cf8dcfd2b8ba2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a654436bf5acf967e413cf8dcfd2b8ba2">set_gyro_low_pass</a> (bool enabled=true, uint8_t mode=5)</td></tr>
+<tr class="memdesc:a654436bf5acf967e413cf8dcfd2b8ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the gyro low pass.  <a href="classicm20948.html#a654436bf5acf967e413cf8dcfd2b8ba2">More...</a><br /></td></tr>
 <tr class="separator:a654436bf5acf967e413cf8dcfd2b8ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392abf1275a7051671ee0a6ff89ea4d5"><td class="memItemLeft" align="right" valign="top"><a id="a392abf1275a7051671ee0a6ff89ea4d5"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>read_temp</b> ()</td></tr>
+<tr class="memitem:a392abf1275a7051671ee0a6ff89ea4d5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classicm20948.html#a392abf1275a7051671ee0a6ff89ea4d5">read_temp</a> ()</td></tr>
+<tr class="memdesc:a392abf1275a7051671ee0a6ff89ea4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">read temperature  <a href="classicm20948.html#a392abf1275a7051671ee0a6ff89ea4d5">More...</a><br /></td></tr>
 <tr class="separator:a392abf1275a7051671ee0a6ff89ea4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -132,6 +137,374 @@ Public Attributes</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>bus</b> =1</td></tr>
 <tr class="separator:aa8ed16f726d4c99165ba8b440ae8aa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for ICM20948 accelerometer, magnetometer and gyroscope. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3c220b32013849d1d14e590f36bfc837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c220b32013849d1d14e590f36bfc837">&#9670;&nbsp;</a></span>icm20948()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">icm20948::icm20948 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>addr</em> = <code>0x68</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classicm20948.html" title="Class for ICM20948 accelerometer, magnetometer and gyroscope.">icm20948</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a88b6fd35b7f342227d0e5c4d882644b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b6fd35b7f342227d0e5c4d882644b1">&#9670;&nbsp;</a></span>magnetometer_ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool icm20948::magnetometer_ready </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize sensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+<a id="a09da3f4be55287e80aef9e4e83b29e2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09da3f4be55287e80aef9e4e83b29e2c">&#9670;&nbsp;</a></span>read_accelerometer_gyro_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::read_accelerometer_gyro_data </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>ay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>az</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>gx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>gy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>gz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read accelerometer and gyroscope data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ax</td><td>pointer to a float where X values of the accelerometer will be stored </td></tr>
+    <tr><td class="paramname">ay</td><td>pointer to a float where Y values of the accelerometer will be stored </td></tr>
+    <tr><td class="paramname">az</td><td>pointer to a float where Z values of the accelerometer will be stored </td></tr>
+    <tr><td class="paramname">gx</td><td>pointer to a float where X values of the gyroscope will be stored </td></tr>
+    <tr><td class="paramname">gy</td><td>pointer to a float where Y values of the gyroscope will be stored </td></tr>
+    <tr><td class="paramname">gz</td><td>pointer to a float where Z values of the gyroscope will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a431fe1d6bbb429bcae6c2e96a747d216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431fe1d6bbb429bcae6c2e96a747d216">&#9670;&nbsp;</a></span>read_magnetometer_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::read_magnetometer_data </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>1000</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the data from the magnetometer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>pointer to a float where X values of the magnetometer will be stored <br  />
+ </td></tr>
+    <tr><td class="paramname">y</td><td>pointer to a float where Y values of the magnetometer will be stored </td></tr>
+    <tr><td class="paramname">z</td><td>pointer to a float where Z values of the magnetometer will be stored <br  />
+ </td></tr>
+    <tr><td class="paramname">timeout</td><td>set to 1000 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a392abf1275a7051671ee0a6ff89ea4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392abf1275a7051671ee0a6ff89ea4d5">&#9670;&nbsp;</a></span>read_temp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float icm20948::read_temp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read temperature </p>
+<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
+
+</div>
+</div>
+<a id="ab8d09c441a6c796b4c7f028908ab910b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d09c441a6c796b4c7f028908ab910b">&#9670;&nbsp;</a></span>set_accelerometer_full_scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::set_accelerometer_full_scale </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the accelerometer full scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>set to 3 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a08d39adf7958ecec034d3a7ac69d1290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d39adf7958ecec034d3a7ac69d1290">&#9670;&nbsp;</a></span>set_accelerometer_low_pass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::set_accelerometer_low_pass </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the accelerometer low pass filter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>set to True by default </td></tr>
+    <tr><td class="paramname">mode</td><td>set to 5 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a748b3eb84dc19c09939b265d3fd6a3fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748b3eb84dc19c09939b265d3fd6a3fe">&#9670;&nbsp;</a></span>set_accelerometer_sample_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::set_accelerometer_sample_rate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rate</em> = <code>125</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the accelerometer sample rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rate</td><td>set to 125 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acd646c58d04e9139453d99ffe7b504c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd646c58d04e9139453d99ffe7b504c9">&#9670;&nbsp;</a></span>set_gyro_full_scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::set_gyro_full_scale </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the gyro full scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>set to 0 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a654436bf5acf967e413cf8dcfd2b8ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654436bf5acf967e413cf8dcfd2b8ba2">&#9670;&nbsp;</a></span>set_gyro_low_pass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::set_gyro_low_pass </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the gyro low pass. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>set to True to default </td></tr>
+    <tr><td class="paramname">mode</td><td>set to 5 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6ef1e555257d44ab4362691c2f47e51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef1e555257d44ab4362691c2f47e51b">&#9670;&nbsp;</a></span>set_gyro_sample_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void icm20948::set_gyro_sample_rate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rate</em> = <code>125</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the gyro sample rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rate</td><td>set to 125 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="icm20948_8h_source.html">icm20948.h</a></li>
 </ul>
