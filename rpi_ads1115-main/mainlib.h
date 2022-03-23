@@ -26,7 +26,7 @@ class mainlib{
 	private:
 		uint8_t axis[2]={0,0};
 		/** unit x-axis, unit y-axit output for the joystick**/
-		bool fingers[4]={false, false, false, false};
+		std::array<bool,4> fingers {false, false, false, false};
 		/** record which finger is bending **/
 	
 };
