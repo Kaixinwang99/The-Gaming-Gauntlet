@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <pigpio.h>
 #include <assert.h>
-
+#include "mainlib.h"
 // enable debug messages and error messages to stderr
 #ifndef NDEBUG
 #define DEBUG
@@ -136,7 +136,12 @@ public:
 	 * \param sample Voltage from the selected channel.
 	 **/
 	virtual void hasSample(float sample) = 0;
-
+	/**
+	 * Called to get the channel
+	 * return the input channel for setChannel
+	 * to fix the bug
+	 **/
+	ADS1115settings::Input getChannel();
 	/**
 	 * Selects a different channel at the multiplexer
 	 * while running.

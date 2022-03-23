@@ -1,24 +1,24 @@
 #include "mainlib.h"
 void mainlib::update_fingers(float flex_sensor[4]){
-	if (flex_sensor[1]>5.0){
+	if (flex_sensor[1]>0.5){
 		fingers[0]=true;
 	}
 	else{
 		fingers[0]=false;
 	}
-	if (flex_sensor[2]>5.0){
+	if (flex_sensor[2]>0.5){
 		fingers[1]=true;
 	}
 	else{
 		fingers[1]=false;
 	}
-	if (flex_sensor[3]>6.0){
+	if (flex_sensor[3]>0.6){
 		fingers[2]=true;
 	}
 	else{
 		fingers[2]=false;
 	}
-	if (flex_sensor[0]>5.0){
+	if (flex_sensor[0]>0.5){
 		fingers[3]=true;
 	}
 	else{

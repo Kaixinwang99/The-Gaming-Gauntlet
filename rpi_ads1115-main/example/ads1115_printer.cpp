@@ -18,21 +18,27 @@
 #include <stdlib.h>
 #include <iostream>
 #include "ads1115rpi.h"
+#include "mainlib.cpp"
 
 // We inherit ADS1115rpi, implement
 // hasSample() and print the ADC reading.
 class ADS1115Printer : public ADS1115rpi {
 	public:
-		int current_channel=0;
+		unsigned current_channel=0;
 		float latest_values[4]={0.0,0.0,0.0,0.0};
-
+		mainlib m;
 		virtual void hasSample(float v) {
+			current_channel = (unsigned)getChannel();
 			latest_values[current_channel]=v;
-			std::cout<<"[0]:"<<latest_values[0]<<"|[1]:"<<latest_values[1]<<"|[2]:"<<latest_values[2]<<"|[3]:"<<latest_values[3]<<"\n";
-
+			m.update_fingers(latest_values);
+			float output = (float)m.match_button();
+			//std::cout<<"[0]:"<<latest_values[0]<<"|[1]:"<<latest_values[1]<<"|[2]:"<<latest_values[2]<<"|[3]:"<<latest_values[3]<<"\n";
+			std::cout<<"output button: "<<output<<"| first: "<<(bool)m.fingers[0]<<"| value:"<<latest_values[0]<<"\n";
 			current_channel = (current_channel+1)%4;
-			setChannel((ADS1115settings::Input)current_channel);
+			//sync();
+			setChannel((ADS1115settings::Input) current_channel);
 		}
+
 };
 
 // Creates an instance of the ADS1115Printer class.
@@ -41,8 +47,12 @@ int main(int argc, char *argv[]) {
 	fprintf(stderr,"Press any key to stop.\n");
 	ADS1115Printer ads1115rpi;
         ADS1115settings s;
+	//mainlib m;
 	s.samplingRate = ADS1115settings::FS64HZ;
 	ads1115rpi.start(s);
+	//m.update_fingers(ads1115rpi.latest_values);
+	//uint8_t output= m.match_button();
+	//std::cout<<"output: "<<output<<"\n";
 	getchar();
 	ads1115rpi.stop();
 	return 0;

@@ -40,7 +40,10 @@ void ADS1115rpi::start(ADS1115settings settings) {
 
 }
 
+ADS1115settings::Input ADS1115rpi::getChannel(){
+	return ads1115settings.channel;
 
+}
 void ADS1115rpi::setChannel(ADS1115settings::Input channel) {
 	unsigned r = i2c_readWord(reg_config);
 	r = r & (~(3 << 12));
@@ -52,6 +55,7 @@ void ADS1115rpi::setChannel(ADS1115settings::Input channel) {
 
 void ADS1115rpi::dataReady() {
 	float v = (float)i2c_readConversion() / (float)0x7fff * fullScaleVoltage() * 2;
+	//mainlib m;
 	hasSample(v);
 }
 
