@@ -1,0 +1,57 @@
+\doxysubsection*{Building Joy\+Controller}
+
+Joy\+Controller is an executable that includes and implements the \mbox{\hyperlink{classJoyLib}{Joy\+Lib}} library. It is mainly to be used for tesing with HW
+
+\doxysubsubsection*{Usage}
+
+Make sure the current working directory is Joy\+Controller and run\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build \&\& cd build }
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make }
+\end{DoxyCode}
+
+
+On successful build it will create an exxecutable named Joy\+Controller and you can run this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./JoyController}
+\end{DoxyCode}
+
+
+For using the library with other modules, copy the \mbox{\hyperlink{classJoyLib}{Joy\+Lib}} folder to the required module/project folder and make sure the root C\+Make\+Lists.\+txt of that module adds the library by adding the following\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{add\_subdirectory(JoyLib)}
+\DoxyCodeLine{target\_include\_directories(\$\{PROJECT\_NAME\} PUBLIC JoyLib)}
+\DoxyCodeLine{}
+\DoxyCodeLine{target\_link\_libraries(\$\{PROJECT\_NAME\} JoyLib)}
+\end{DoxyCode}
+
+
+\doxysubsection*{Testing}
+
+Unit tests are written in the G\+Test framework. tests/\+Joy\+Test.\+cpp contains all the tests. The testing framework depends on Google\+Test, so to install and set up the gtest library, run the following commands\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install libgtest-\/dev}
+\DoxyCodeLine{cd /usr/src/gtest}
+\DoxyCodeLine{sudo cmake CMakeLists.txt}
+\DoxyCodeLine{sudo make}
+\DoxyCodeLine{sudo cp *.a /usr/lib}
+\end{DoxyCode}
+
+
+This will install and set up gtest to be used with cmake. Refer to the C\+Make\+Lists.\+txt in the tests folder to see implementation.
+
+\doxysubsubsection*{Running tests}
+
+To build and run tests, go to the root project folder which is Joy\+Controller. Build all the libraries and then run the test. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd buld          \#go to the build dir to keep the root dir clean }
+\DoxyCodeLine{cmake ..         \#build all the objects}
+\DoxyCodeLine{make             \#create executables}
+\DoxyCodeLine{./tests/JoyTest  \#run the test}
+\end{DoxyCode}
+ 

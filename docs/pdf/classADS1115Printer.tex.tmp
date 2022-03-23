@@ -1,0 +1,51 @@
+\hypertarget{classADS1115Printer}{}\doxysection{A\+D\+S1115\+Printer Class Reference}
+\label{classADS1115Printer}\index{ADS1115Printer@{ADS1115Printer}}
+
+
+Inheritance diagram for A\+D\+S1115\+Printer\+:
+% FIG 0
+
+
+Collaboration diagram for A\+D\+S1115\+Printer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classADS1115Printer_a06edaf232ca82567e741580132983db2}{has\+Sample}} (float v)
+\begin{DoxyCompactList}\small\item\em Called when a new sample is available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classADS1115Printer_ae702aac9ed2adffe99eda060af683689}\label{classADS1115Printer_ae702aac9ed2adffe99eda060af683689}} 
+int {\bfseries current\+\_\+channel} =0
+\item 
+\mbox{\Hypertarget{classADS1115Printer_aeaa3faa804c765691c23232598626606}\label{classADS1115Printer_aeaa3faa804c765691c23232598626606}} 
+float {\bfseries latest\+\_\+values} \mbox{[}4\mbox{]} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classADS1115Printer_a06edaf232ca82567e741580132983db2}\label{classADS1115Printer_a06edaf232ca82567e741580132983db2}} 
+\index{ADS1115Printer@{ADS1115Printer}!hasSample@{hasSample}}
+\index{hasSample@{hasSample}!ADS1115Printer@{ADS1115Printer}}
+\doxysubsubsection{\texorpdfstring{hasSample()}{hasSample()}}
+{\footnotesize\ttfamily virtual void A\+D\+S1115\+Printer\+::has\+Sample (\begin{DoxyParamCaption}\item[{float}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called when a new sample is available. 
+
+This needs to be implemented in a derived class by the client. Defined as abstract. 
+\begin{DoxyParams}{Parameters}
+{\em sample} & Voltage from the selected channel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classADS1115rpi_a515633c671efe89d43b814d4682440af}{A\+D\+S1115rpi}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ads1115\+\_\+printer.\+cpp\end{DoxyCompactItemize}

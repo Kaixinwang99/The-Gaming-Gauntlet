@@ -1,0 +1,57 @@
+
+
+The A\+D\+S1115 is a sigma delta converter which has a P\+GA and a programmable sampling rate from 8Hz..860Hz. It\textquotesingle{}s perfect for slowly changing inputs such as pressure, temperature, heart rate etc.
+
+This repo offers the class {\ttfamily \mbox{\hyperlink{classADS1115rpi}{A\+D\+S1115rpi}}} which manages the communication between the A\+D\+S1115 and the client who just needs to implement the callback {\ttfamily has\+Sample(float sample)} which is then called at the requested sampling rate.
+
+The class uses the A\+L\+E\+R\+T/\+R\+DY pin of the A\+D\+S1115 connected to G\+P\+IO 17 to establish the sampling rate.
+
+\doxysection*{Building\+:}
+
+To build\+: \begin{DoxyVerb}cmake .
+
+make
+\end{DoxyVerb}
+
+
+\doxysection*{Install}
+
+\begin{DoxyVerb}sudo make install
+\end{DoxyVerb}
+
+
+\doxysection*{Usage example}
+
+In the subdir {\ttfamily example} is a simple application which prints the A\+DC data to the screen or you can pipe it into a file. \begin{DoxyVerb}cd example
+sudo ./ads1115_printer
+\end{DoxyVerb}
+
+
+\doxysection*{General usage}
+
+The online doc is here\+: \href{https://berndporr.github.io/rpi_ads1115/}{\texttt{ https\+://berndporr.\+github.\+io/rpi\+\_\+ads1115/}}
+
+You need to overload the abstract callback handler\+: {\ttfamily virtual void has\+Sample(float v) \{ \};} with the functionality you\textquotesingle{}d like it to do. You can switch the input channel within the callback handler to cycle through different inputs.
+
+Start the data acquisition\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myAD7705comm.start(settings)}
+\end{DoxyCode}
+
+
+Once {\ttfamily start} has been called {\ttfamily has\+Sample} will be called at the specified sampling rate.
+
+Stop the data acquisition\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myAD7705comm.stop();}
+\end{DoxyCode}
+
+
+\doxysection*{Author\+: Bernd Porr}
+
+
+\begin{DoxyItemize}
+\item \href{mailto:bernd.porr@glasgow.ac.uk}{\texttt{ bernd.\+porr@glasgow.\+ac.\+uk}}
+\item \href{mailto:mail@berndporr.me.uk}{\texttt{ mail@berndporr.\+me.\+uk}}
+\item www.\+berndporr.\+me.\+uk 
+\end{DoxyItemize}
