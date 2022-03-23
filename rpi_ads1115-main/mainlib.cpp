@@ -28,13 +28,13 @@ void mainlib::update_fingers(float flex_sensor[4]){
 uint8_t mainlib::match_button(void){
 	uint8_t button;
 	std::array<bool,4> button0 {true,false,false,false};
-	bool button1[]={false,true,false,false};
-	bool button2[]={false,false,true,false};
-	bool button3[]={false,false,false,true};
-	bool button4[]={true,true,false,false};
-	bool button5[]={true,false,true,true};
-	bool button6[]={true,false,false,true};
-	bool button7[]={true,true,true,true};
+	std::array<bool,4> button1 {false,true,false,false};
+	std::array<bool,4> button2 {false,false,true,false};
+	std::array<bool,4> button3 {false,false,false,true};
+	std::array<bool,4> button4 {true,true,false,false};
+	std::array<bool,4> button5 {true,false,true,true};
+	std::array<bool,4> button6 {true,false,false,true};
+	std::array<bool,4> button7 {true,true,true,true};
 	if (fingers==button0) {
 		button = 0;
 	}
