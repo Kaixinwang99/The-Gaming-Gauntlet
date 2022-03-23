@@ -53,7 +53,7 @@ class JoyLib {
         bool xAxis(int8_t value);
         /**
          * @brief 
-         * Writes the value of the Y axis of the Joystick between -127 and 127 (1st byte)
+         * Writes the value of the Y axis of the Joystick between -127 and 127 (2nd byte)
          * @param value 
          * @return true 
          * @return false 
