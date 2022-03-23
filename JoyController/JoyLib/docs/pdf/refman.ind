@@ -1,0 +1,47 @@
+\begin{theindex}
+
+  \item {begin}
+    \subitem {JoyLib}, \hyperpage{5}
+
+  \indexspace
+
+  \item {get\_axis}
+    \subitem {JoyLib}, \hyperpage{6}
+  \item {get\_buttons}
+    \subitem {JoyLib}, \hyperpage{6}
+
+  \indexspace
+
+  \item {JoyLib}, \hyperpage{5}
+    \subitem {begin}, \hyperpage{5}
+    \subitem {get\_axis}, \hyperpage{6}
+    \subitem {get\_buttons}, \hyperpage{6}
+    \subitem {press}, \hyperpage{6}
+    \subitem {release}, \hyperpage{7}
+    \subitem {releaseAll}, \hyperpage{7}
+    \subitem {xAxis}, \hyperpage{7}
+    \subitem {yAxis}, \hyperpage{8}
+
+  \indexspace
+
+  \item {press}
+    \subitem {JoyLib}, \hyperpage{6}
+
+  \indexspace
+
+  \item {release}
+    \subitem {JoyLib}, \hyperpage{7}
+  \item {releaseAll}
+    \subitem {JoyLib}, \hyperpage{7}
+
+  \indexspace
+
+  \item {xAxis}
+    \subitem {JoyLib}, \hyperpage{7}
+
+  \indexspace
+
+  \item {yAxis}
+    \subitem {JoyLib}, \hyperpage{8}
+
+\end{theindex}
