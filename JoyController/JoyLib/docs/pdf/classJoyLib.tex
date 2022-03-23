@@ -13,17 +13,17 @@ This class handles the button and joystick actions.
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{classJoyLib_aa8d76c244beee71b7479d58e25809809}{begin}} (const char $\ast$device)
-\item 
+\begin{DoxyCompactList}\small\item\em To open the file to which commands will be written. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classJoyLib_a49295bce903786ff851d0676b339376f}{press}} (int8\+\_\+t button)
-\begin{DoxyCompactList}\small\item\em writes the command of the button pressed (3rd byte) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Writes the command of the button pressed (3rd byte) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classJoyLib_ae8d6120d4cdb32041e397e9df344c170}{release}} (int8\+\_\+t button)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes the command of the button beign released (3rd byte) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classJoyLib_af7a0d0fdf09adc5797ea6e31fe599e2d}{release\+All}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes that all buttons have been released (3rd byte) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classJoyLib_af98cf1c1b286758ec4bc9630706e5201}{x\+Axis}} (int8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes the value of the X axis of the joystick between -\/127 and 127 (1st byte) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classJoyLib_a3090a1974ee81cf7feb990d4da5a6e99}{y\+Axis}} (int8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes the value of the Y axis of the Joystick between -\/127 and 127 (1st byte) \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classJoyLib_a804bfcc141693752cb7845b6cc4adb90}{get\+\_\+buttons}} ()
 \begin{DoxyCompactList}\small\item\em Get the buttons object. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{classJoyLib_a770c0f1ee348830c52ca85bfa4b03ec2}{get\+\_\+axis}} ()
@@ -39,6 +39,10 @@ This class handles the button and joystick actions.
 \index{begin@{begin}!JoyLib@{JoyLib}}
 \doxysubsubsection{\texorpdfstring{begin()}{begin()}}
 {\footnotesize\ttfamily bool Joy\+Lib\+::begin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+To open the file to which commands will be written. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -61,7 +65,7 @@ false
 Get the axis object. 
 
 \begin{DoxyReturn}{Returns}
-uint16\+\_\+t 
+uint8\+\_\+t 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classJoyLib_a804bfcc141693752cb7845b6cc4adb90}\label{classJoyLib_a804bfcc141693752cb7845b6cc4adb90}} 
 \index{JoyLib@{JoyLib}!get\_buttons@{get\_buttons}}
@@ -84,7 +88,7 @@ uint8\+\_\+t
 
 
 
-writes the command of the button pressed (3rd byte) 
+Writes the command of the button pressed (3rd byte) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -103,6 +107,10 @@ false
 {\footnotesize\ttfamily bool Joy\+Lib\+::release (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{button }\end{DoxyParamCaption})}
 
 
+
+Writes the command of the button beign released (3rd byte) 
+
+
 \begin{DoxyParams}{Parameters}
 {\em button} & \\
 \hline
@@ -118,6 +126,10 @@ false
 \doxysubsubsection{\texorpdfstring{releaseAll()}{releaseAll()}}
 {\footnotesize\ttfamily bool Joy\+Lib\+::release\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Writes that all buttons have been released (3rd byte) 
+
 \begin{DoxyReturn}{Returns}
 true 
 
@@ -128,6 +140,10 @@ false
 \index{xAxis@{xAxis}!JoyLib@{JoyLib}}
 \doxysubsubsection{\texorpdfstring{xAxis()}{xAxis()}}
 {\footnotesize\ttfamily bool Joy\+Lib\+::x\+Axis (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Writes the value of the X axis of the joystick between -\/127 and 127 (1st byte) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -144,6 +160,10 @@ false
 \index{yAxis@{yAxis}!JoyLib@{JoyLib}}
 \doxysubsubsection{\texorpdfstring{yAxis()}{yAxis()}}
 {\footnotesize\ttfamily bool Joy\+Lib\+::y\+Axis (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Writes the value of the Y axis of the Joystick between -\/127 and 127 (1st byte) 
 
 
 \begin{DoxyParams}{Parameters}
