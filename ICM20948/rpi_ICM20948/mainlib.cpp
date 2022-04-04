@@ -7,13 +7,15 @@ std::array<uint8_t,2> mainlib::getAxis(void){
 	return axis;
 }
 void mainlib::update_axis(float x, float y, float z){
-    	float n;
-	n = 127*(1/sqrt(x*x+y*y+z*z));
+    	float n,nx,ny;
+	n = 1/sqrt(x*x+y*y+z*z);
+	nx=n*x+1;
+	ny=n*y+1;
     	uint8_t coord_x;
     	uint8_t coord_y;
 
-    	coord_x = int(x*n);
-    	coord_y = int(y*n);
+    	coord_x = nx*127;
+    	coord_y = ny*127;
 
     	axis = {coord_x,coord_y};
 }

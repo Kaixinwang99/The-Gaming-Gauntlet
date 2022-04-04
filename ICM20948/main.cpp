@@ -34,6 +34,6 @@ int main(int, char**){
 		m.update_axis(x,y,z);
 		std::array<uint8_t,2> output;
 		output = m.getAxis();
-		std::cout<<"x: "<<output[0]<<"y: "<<output[1]<<"\n";
+		std::cout<<"x: "<<(int)output[0]-127<<"y: "<<(int)output[1]-127<<"\n";
 	}
 }
