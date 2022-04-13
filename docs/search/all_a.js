@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pga_22',['PGA',['../structADS1115settings.html#a831970032a15754ead970931dd25ac5f',1,'ADS1115settings']]],
-  ['pgagain_23',['pgaGain',['../structADS1115settings.html#a9c5013fdbef7376faec2df49d123e67e',1,'ADS1115settings']]],
-  ['press_24',['press',['../classJoyLib.html#a49295bce903786ff851d0676b339376f',1,'JoyLib']]]
+  ['magnetometer_5fready_21',['magnetometer_ready',['../classicm20948.html#a88b6fd35b7f342227d0e5c4d882644b1',1,'icm20948']]],
+  ['mainlib_22',['mainlib',['../classmainlib.html',1,'']]],
+  ['match_5fbutton_23',['match_button',['../classmainlib.html#a6846d4ad64c7e508c232f8aef40b272d',1,'mainlib::match_button(void)'],['../classmainlib.html#a6846d4ad64c7e508c232f8aef40b272d',1,'mainlib::match_button(void)'],['../classmainlib.html#a6846d4ad64c7e508c232f8aef40b272d',1,'mainlib::match_button(void)']]]
 ];

@@ -16,11 +16,14 @@ virtual void \mbox{\hyperlink{classADS1115Printer_a06edaf232ca82567e741580132983
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classADS1115Printer_ae702aac9ed2adffe99eda060af683689}\label{classADS1115Printer_ae702aac9ed2adffe99eda060af683689}} 
-int {\bfseries current\+\_\+channel} =0
+\mbox{\Hypertarget{classADS1115Printer_a2d22f33b2ee33c0ddec9ea52c2580532}\label{classADS1115Printer_a2d22f33b2ee33c0ddec9ea52c2580532}} 
+unsigned {\bfseries current\+\_\+channel} =0
 \item 
 \mbox{\Hypertarget{classADS1115Printer_aeaa3faa804c765691c23232598626606}\label{classADS1115Printer_aeaa3faa804c765691c23232598626606}} 
 float {\bfseries latest\+\_\+values} \mbox{[}4\mbox{]} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
+\item 
+\mbox{\Hypertarget{classADS1115Printer_aab3b96b32e21396bb2a2f120c1a48715}\label{classADS1115Printer_aab3b96b32e21396bb2a2f120c1a48715}} 
+\mbox{\hyperlink{classmainlib}{mainlib}} {\bfseries m}
 \end{DoxyCompactItemize}
 
 

@@ -25,6 +25,7 @@ var NAVTREE =
   [ "The Gaming Gauntlet", "index.html", [
     [ "JoyLib", "md_JoyController_JoyLib_doxy.html", null ],
     [ "JoyLib Library usage with CMake", "md_JoyController_README.html", null ],
+    [ "new_class", "md_new_class_doxy.html", null ],
     [ "The Gaming Gauntlet", "md_README.html", null ],
     [ "rpi_ads1115", "md_rpi_ads1115-main_doxy.html", null ],
     [ "Example program", "md_rpi_ads1115-main_example_README.html", null ],
@@ -48,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"JoyLib_8h_source.html"
+"ICM20948_2rpi__ICM20948_2mainlib_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
