@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xaxis_44',['xAxis',['../classJoyLib.html#af98cf1c1b286758ec4bc9630706e5201',1,'JoyLib']]]
+  ['the_20gaming_20gauntlet_45',['The Gaming Gauntlet',['../md_README.html',1,'']]]
 ];

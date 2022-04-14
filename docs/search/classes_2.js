@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['joylib_51',['JoyLib',['../classJoyLib.html',1,'']]]
+  ['joylib_54',['JoyLib',['../classJoyLib.html',1,'']]]
 ];

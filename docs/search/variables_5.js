@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['samplingrate_85',['samplingRate',['../structADS1115settings.html#aab5ef57bb9aef08aac7a7fd7de33a451',1,'ADS1115settings']]]
+  ['pgagain_89',['pgaGain',['../structADS1115settings.html#a9c5013fdbef7376faec2df49d123e67e',1,'ADS1115settings']]]
 ];

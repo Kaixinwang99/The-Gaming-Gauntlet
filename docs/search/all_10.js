@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yaxis_45',['yAxis',['../classJoyLib.html#a3090a1974ee81cf7feb990d4da5a6e99',1,'JoyLib']]]
+  ['update_5ffingers_46',['update_fingers',['../classmainlib.html#a12bd8f60a22fbdab9cc466b867f3c47c',1,'mainlib::update_fingers(float flex_sensor[4])'],['../classmainlib.html#a12bd8f60a22fbdab9cc466b867f3c47c',1,'mainlib::update_fingers(float flex_sensor[4])'],['../classmainlib.html#a12bd8f60a22fbdab9cc466b867f3c47c',1,'mainlib::update_fingers(float flex_sensor[4])']]]
 ];

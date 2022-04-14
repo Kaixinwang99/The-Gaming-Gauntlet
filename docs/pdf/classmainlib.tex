@@ -9,14 +9,71 @@ void {\bfseries update\+\_\+axis} (float x, float y, float z)
 void \mbox{\hyperlink{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}{update\+\_\+fingers}} (float flex\+\_\+sensor\mbox{[}4\mbox{]})
 \begin{DoxyCompactList}\small\item\em turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}{match\+\_\+button}} (void)
+\begin{DoxyCompactList}\small\item\em turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainlib_a03a880e1c4d107edddb84c4efb5f3e9b}\label{classmainlib_a03a880e1c4d107edddb84c4efb5f3e9b}} 
+std\+::array$<$ uint8\+\_\+t, 2 $>$ {\bfseries get\+Axis} (void)
+\item 
+\mbox{\Hypertarget{classmainlib_a07c0963517a5909d864b423b6396aea7}\label{classmainlib_a07c0963517a5909d864b423b6396aea7}} 
+void {\bfseries set\+Axis} (std\+::array$<$ uint8\+\_\+t, 2 $>$)
+\item 
+\mbox{\Hypertarget{classmainlib_addbf11322b5a611f09adc07094c46d24}\label{classmainlib_addbf11322b5a611f09adc07094c46d24}} 
+void {\bfseries update\+\_\+axis} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}{update\+\_\+fingers}} (float flex\+\_\+sensor\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}{match\+\_\+button}} (void)
+\begin{DoxyCompactList}\small\item\em turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainlib_a91aa0933670b34b1268327f7bbe67d6d}\label{classmainlib_a91aa0933670b34b1268327f7bbe67d6d}} 
+std\+::array$<$ uint8\+\_\+t, 2 $>$ {\bfseries get\+Axis} (void)
+\item 
+\mbox{\Hypertarget{classmainlib_a07c0963517a5909d864b423b6396aea7}\label{classmainlib_a07c0963517a5909d864b423b6396aea7}} 
+void {\bfseries set\+Axis} (std\+::array$<$ uint8\+\_\+t, 2 $>$)
+\item 
+\mbox{\Hypertarget{classmainlib_addbf11322b5a611f09adc07094c46d24}\label{classmainlib_addbf11322b5a611f09adc07094c46d24}} 
+void {\bfseries update\+\_\+axis} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}{update\+\_\+fingers}} (float flex\+\_\+sensor\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}{match\+\_\+button}} (void)
 \begin{DoxyCompactList}\small\item\em turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ bool, 4 $>$ \mbox{\hyperlink{classmainlib_a9b1b35d659b2337a45dca0e161e2b279}{fingers}} \{false, false, false, false\}
+\begin{DoxyCompactList}\small\item\em use bool fingers list to defind which button is being pressed \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}\label{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}} 
 \index{mainlib@{mainlib}!match\_button@{match\_button}}
 \index{match\_button@{match\_button}!mainlib@{mainlib}}
-\doxysubsubsection{\texorpdfstring{match\_button()}{match\_button()}}
+\doxysubsubsection{\texorpdfstring{match\_button()}{match\_button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily uint8\+\_\+t mainlib\+::match\+\_\+button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}\label{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}} 
+\index{mainlib@{mainlib}!match\_button@{match\_button}}
+\index{match\_button@{match\_button}!mainlib@{mainlib}}
+\doxysubsubsection{\texorpdfstring{match\_button()}{match\_button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily uint8\+\_\+t mainlib\+::match\+\_\+button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}\label{classmainlib_a6846d4ad64c7e508c232f8aef40b272d}} 
+\index{mainlib@{mainlib}!match\_button@{match\_button}}
+\index{match\_button@{match\_button}!mainlib@{mainlib}}
+\doxysubsubsection{\texorpdfstring{match\_button()}{match\_button()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily uint8\+\_\+t mainlib\+::match\+\_\+button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
@@ -29,7 +86,33 @@ void
 \mbox{\Hypertarget{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}\label{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}} 
 \index{mainlib@{mainlib}!update\_fingers@{update\_fingers}}
 \index{update\_fingers@{update\_fingers}!mainlib@{mainlib}}
-\doxysubsubsection{\texorpdfstring{update\_fingers()}{update\_fingers()}}
+\doxysubsubsection{\texorpdfstring{update\_fingers()}{update\_fingers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void mainlib\+::update\+\_\+fingers (\begin{DoxyParamCaption}\item[{float}]{flex\+\_\+sensor\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}\label{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}} 
+\index{mainlib@{mainlib}!update\_fingers@{update\_fingers}}
+\index{update\_fingers@{update\_fingers}!mainlib@{mainlib}}
+\doxysubsubsection{\texorpdfstring{update\_fingers()}{update\_fingers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void mainlib\+::update\+\_\+fingers (\begin{DoxyParamCaption}\item[{float}]{flex\+\_\+sensor\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}\label{classmainlib_a12bd8f60a22fbdab9cc466b867f3c47c}} 
+\index{mainlib@{mainlib}!update\_fingers@{update\_fingers}}
+\index{update\_fingers@{update\_fingers}!mainlib@{mainlib}}
+\doxysubsubsection{\texorpdfstring{update\_fingers()}{update\_fingers()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily void mainlib\+::update\+\_\+fingers (\begin{DoxyParamCaption}\item[{float}]{flex\+\_\+sensor\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
 
 
@@ -41,7 +124,23 @@ void
 \end{DoxyReturn}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmainlib_a9b1b35d659b2337a45dca0e161e2b279}\label{classmainlib_a9b1b35d659b2337a45dca0e161e2b279}} 
+\index{mainlib@{mainlib}!fingers@{fingers}}
+\index{fingers@{fingers}!mainlib@{mainlib}}
+\doxysubsubsection{\texorpdfstring{fingers}{fingers}}
+{\footnotesize\ttfamily std\+::array$<$ bool, 4 $>$ mainlib\+::fingers \{false, false, false, false\}}
+
+
+
+use bool fingers list to defind which button is being pressed 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-mainlib.\+h\item 
-mainlib.\+cpp\end{DoxyCompactItemize}
+I\+C\+M20948/rpi\+\_\+\+I\+C\+M20948/mainlib.\+h\item 
+I\+C\+M20948/rpi\+\_\+\+I\+C\+M20948/mainlib.\+cpp\end{DoxyCompactItemize}
