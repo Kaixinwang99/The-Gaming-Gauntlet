@@ -18,8 +18,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include "ads1115rpi.h"
-#include "mainlib.cpp"
-#include "JoyLib.cpp"
 class ADS1115Printer : public ADS1115rpi {
 	public:
 		unsigned current_channel=0;
@@ -28,19 +26,11 @@ class ADS1115Printer : public ADS1115rpi {
 		virtual void hasSample(float v) {
 			current_channel = (unsigned)getChannel();
 			latest_values[current_channel]=v;
-			m.update_fingers(latest_values);
-			output = m.match_button();
-			if (output==8){
-				joy.releaseALL();
-			}
-			else if(joy.get_buttons()!=output){
-				joy.press(output);
-			}
-			std::cout<<"output button: "<<(int)output<<"\n";
+			std::cout<<"One: "<<latest_values[0]<<"2|: "<<latest_values[1]<<" | "<<latest_values[2]<<" | "<<latest_values[3]<<"\n";
 			current_channel = (current_channel+1)%4;
 			setChannel((ADS1115settings::Input) current_channel);
 		}
-}
+};
 // Creates an instance of the ADS1115Printer class.
 // Prints data till the user presses a key.
 int main(int argc, char *argv[]) {
