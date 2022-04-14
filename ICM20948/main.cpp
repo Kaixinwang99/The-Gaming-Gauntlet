@@ -24,16 +24,20 @@ int main(int, char**) {
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-
+#include "../JoyController/JoyLib/JoyLib.cpp"
 int main(int, char**){
 	icm20948 imu;
 	float x,y,z;
 	mainlib m;
+	JoyLib joy;
+	joy.begin("/dev/hidg0");
 	while(true){
 		imu.read_magnetometer_data(&x,&y,&z);
 		m.update_axis(x,y,z);
 		std::array<uint8_t,2> output;
 		output = m.getAxis();
-		std::cout<<"x: "<<(int)output[0]-127<<"y: "<<(int)output[1]-127<<"\n";
+		joy.xAxis((int8_t)(output[1]-128));
+		joy.yAxis((int8_t)(output[0]-128));
+		std::cout<<"x: "<<(int)output[1]-128<<"y: "<<(int)output[0]-128<<"\n";
 	}
 }
