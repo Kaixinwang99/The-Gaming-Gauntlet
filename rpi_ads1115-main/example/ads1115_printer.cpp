@@ -19,6 +19,7 @@
 #include <iostream>
 #include "ads1115rpi.h"
 #include "mainlib.cpp"
+#include "JoyLib.cpp"
 class ADS1115Printer : public ADS1115rpi {
 	public:
 		unsigned current_channel=0;
