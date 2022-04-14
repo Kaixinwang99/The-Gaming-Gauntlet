@@ -79,5 +79,8 @@ uint8_t mainlib::match_button(void){
 	else if (fingers==button7) {
 		button = 7;
 	}
+	else{
+		button = 8;
+	}
 	return button;
 }
