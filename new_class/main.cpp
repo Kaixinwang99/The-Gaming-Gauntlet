@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <iostream>
 #include "mainlib.cpp"
-#include "../ICM20948/rpi_ICM20948/icm20948.cpp"
-#include "../rpi_ads1115-main/ads1115rpi.cpp"
-#include "../JoyController/JoyLib/JoyLib.cpp"
+#include "../ICM20948/rpi_ICM20948/icm20948.h"
+#include "../rpi_ads1115-main/ads1115rpi.h"
+#include "../JoyController/JoyLib/JoyLib.h"
 // We inherit ADS1115rpi, implement
 // hasSample() and print the ADC reading.
 class ADS1115Printer : public ADS1115rpi {
@@ -14,13 +14,15 @@ class ADS1115Printer : public ADS1115rpi {
 		unsigned current_channel=0;
 		float latest_values[4]={0.0,0.0,0.0,0.0};
 		uint8_t output;
+		mainlib m;
+		JoyLib joy;
 		virtual void hasSample(float v) {
 			current_channel = (unsigned)getChannel();
 			latest_values[current_channel]=v;
 			m.update_fingers(latest_values);
 			output = m.match_button();
 			if (output==8){
-				joy.releaseALL();
+				joy.releaseAll();
 			}
 			else if(joy.get_buttons()!=output){
 				joy.press(output);

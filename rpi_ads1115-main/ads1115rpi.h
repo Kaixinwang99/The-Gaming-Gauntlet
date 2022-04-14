@@ -19,7 +19,8 @@
 #include <stdlib.h>
 #include <pigpio.h>
 #include <assert.h>
-#include "mainlib.h"
+#include "../new_class/mainlib.h"
+#include "../JoyController/JoyLib/JoyLib.cpp"
 // enable debug messages and error messages to stderr
 #ifndef NDEBUG
 #define DEBUG

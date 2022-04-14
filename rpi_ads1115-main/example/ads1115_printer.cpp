@@ -19,28 +19,27 @@
 #include <iostream>
 #include "ads1115rpi.h"
 #include "mainlib.cpp"
-
-// We inherit ADS1115rpi, implement
-// hasSample() and print the ADC reading.
 class ADS1115Printer : public ADS1115rpi {
 	public:
 		unsigned current_channel=0;
 		float latest_values[4]={0.0,0.0,0.0,0.0};
-		mainlib m;
+		uint8_t output;
 		virtual void hasSample(float v) {
 			current_channel = (unsigned)getChannel();
 			latest_values[current_channel]=v;
 			m.update_fingers(latest_values);
-			float output = (float)m.match_button();
-			//std::cout<<"[0]:"<<latest_values[0]<<"|[1]:"<<latest_values[1]<<"|[2]:"<<latest_values[2]<<"|[3]:"<<latest_values[3]<<"\n";
-			std::cout<<"output button: "<<output<<"| first: "<<(bool)m.fingers[0]<<"| value:"<<latest_values[0]<<"\n";
+			output = m.match_button();
+			if (output==8){
+				joy.releaseALL();
+			}
+			else if(joy.get_buttons()!=output){
+				joy.press(output);
+			}
+			std::cout<<"output button: "<<(int)output<<"\n";
 			current_channel = (current_channel+1)%4;
-			//sync();
 			setChannel((ADS1115settings::Input) current_channel);
 		}
-
-};
-
+}
 // Creates an instance of the ADS1115Printer class.
 // Prints data till the user presses a key.
 int main(int argc, char *argv[]) {
