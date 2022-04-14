@@ -25,8 +25,10 @@ class mainlib{
          * @return void
          */
 		std::array<bool,4> fingers {false, false, false, false};
+		std::array<uint8_t,2> getAxis(void);
+		void setAxis(std::array<uint8_t,2>);
 	private:
-		uint8_t axis[2]={0,0};
+		std::array<uint8_t,2> axis {0,0};
 		/** unit x-axis, unit y-axit output for the joystick**/
 		
 		/** record which finger is bending **/

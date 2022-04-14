@@ -1,4 +1,24 @@
 #include "mainlib.h"
+#include <math.h>
+void mainlib::setAxis(std::array<uint8_t,2> input_axis){
+	axis = input_axis;
+}
+std::array<uint8_t,2> mainlib::getAxis(void){
+	return axis;
+}
+void mainlib::update_axis(float x, float y, float z){
+    	float n,nx,ny;
+	n = 1/sqrt(x*x+y*y+z*z);
+	nx=n*x+1;
+	ny=n*y+1;
+    	uint8_t coord_x;
+    	uint8_t coord_y;
+
+    	coord_x = nx*127;
+    	coord_y = ny*127;
+
+    	axis = {coord_x,coord_y};
+}
 void mainlib::update_fingers(float flex_sensor[4]){
 	if (flex_sensor[1]>0.5){
 		fingers[0]=true;
@@ -58,6 +78,9 @@ uint8_t mainlib::match_button(void){
 	}
 	else if (fingers==button7) {
 		button = 7;
+	}
+	else{
+		button = 8;
 	}
 	return button;
 }

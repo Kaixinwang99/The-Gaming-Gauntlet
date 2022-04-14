@@ -1,11 +1,11 @@
 #include "icm20948.h"
-static const char could_not_open_i2c[] = "Could not open I2C.\n";
+static const char could_not_open_i2c_icm[] = "Could not open icm I2C.\n";
 
 uint8_t icm20948::read(unsigned int reg){
     int fd = i2cOpen(bus,I2C_ADDR,0);
     if (fd < 0) {
         fprintf(stderr,"Could not open %02x.\n",I2C_ADDR);
-        throw could_not_open_i2c;
+        throw could_not_open_i2c_icm;
     }
     int r;
     r = i2cReadByteData(fd,(unsigned int)reg);
@@ -21,7 +21,7 @@ void icm20948::write(unsigned int reg,unsigned int value){
     int fd = i2cOpen(bus,I2C_ADDR,0);
     if (fd < 0) {
         fprintf(stderr,"Could not open %02x.\n",I2C_ADDR);
-        throw could_not_open_i2c;
+        throw could_not_open_i2c_icm;
     }
     int r;
     r = i2cWriteByteData(fd,(unsigned int)reg,(unsigned int)value);
@@ -44,7 +44,7 @@ void icm20948::read_bytes(unsigned int reg,uint8_t* bytes,int len){
     int fd = i2cOpen(bus,I2C_ADDR,0);
     if (fd < 0) {
         fprintf(stderr,"Could not open %02x.\n",I2C_ADDR);
-        throw could_not_open_i2c;
+        throw could_not_open_i2c_icm;
     }
     int r;
     r=i2cReadI2CBlockData(fd,reg,(char*)bytes,len);

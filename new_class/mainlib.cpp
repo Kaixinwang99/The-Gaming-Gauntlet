@@ -7,36 +7,50 @@ std::array<uint8_t,2> mainlib::getAxis(void){
 	return axis;
 }
 void mainlib::update_axis(float x, float y, float z){
-    	float n;
-	n = 127*(1/sqrt(x*x+y*y+z*z));
-    	uint8_t coord_x;
-    	uint8_t coord_y;
-
-    	coord_x = int(x*n);
-    	coord_y = int(y*n);
-
+    	float n,nx,ny;
+	n = 1/sqrt(x*x+y*y+z*z);
+	nx=n*x+1;
+	ny=n*y+1;
+    	int8_t coord_x;
+    	int8_t coord_y;
+    	coord_x = nx*127-128;
+    	coord_y = ny*127-128;
+	coord_x = coord_x*1.5;
+	coord_y = coord_y*1.5;
+	if (coord_x >127){
+		coord_x=127;
+	}
+	else if(coord_x < -127){
+		coord_x=-127;
+	}
+	if (coord_y>127){
+		coord_y=127;
+	}
+	else if(coord_y <-127){
+		coord_y=-127;
+	}
     	axis = {coord_x,coord_y};
 }
 void mainlib::update_fingers(float flex_sensor[4]){
-	if (flex_sensor[1]>0.5){
+	if (flex_sensor[1]<0.8){
 		fingers[0]=true;
 	}
 	else{
 		fingers[0]=false;
 	}
-	if (flex_sensor[2]>0.5){
+	if (flex_sensor[0]<0.8){
 		fingers[1]=true;
 	}
 	else{
 		fingers[1]=false;
 	}
-	if (flex_sensor[3]>0.6){
+	if (flex_sensor[3]<1.5){
 		fingers[2]=true;
 	}
 	else{
 		fingers[2]=false;
 	}
-	if (flex_sensor[0]>0.5){
+	if (flex_sensor[2]<0.8){
 		fingers[3]=true;
 	}
 	else{
@@ -76,6 +90,9 @@ uint8_t mainlib::match_button(void){
 	}
 	else if (fingers==button7) {
 		button = 7;
+	}
+	else{
+		button = 8;
 	}
 	return button;
 }
