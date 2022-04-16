@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include "JoyLib.cpp"
-#include "ads1115rpi.cpp"
+#include <JoyLib.h>
+#include "ads1115rpi.h"
 class ADS1115Printer : public ADS1115rpi {
 	public:
 		unsigned current_channel=0;
