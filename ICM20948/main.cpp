@@ -11,10 +11,13 @@ class ADS1115Printer : public ADS1115rpi {
 	public:
 		unsigned current_channel=0;
 		float latest_values[4]={0.0,0.0,0.0,0.0};
-	
+		float previous_values[4]={0.0,0.0,0.0,0.0};
+		float changes_values[4]={0.0,0.0,0.0,0.0};
 		virtual void hasSample(float v) {
 			current_channel = (unsigned)getChannel();
+			previous_values[current_channel]=latest_values[current_channel]; 
 			latest_values[current_channel]=v;
+			changes_values[current_channel]=v-previous_values[current_channel];
 			current_channel = (current_channel+1)%4;
 			setChannel((ADS1115settings::Input) current_channel);
 		}
@@ -35,25 +38,28 @@ int main(int, char**){
 	while(true){
 		imu.read_magnetometer_data(&x,&y,&z);
 		m.update_axis(x,y,z);
-		std::array<uint8_t,2> output;
+		std::array<int8_t,2> output;
 		output = m.getAxis();
 		joy.xAxis((int8_t)output[1]);
 		joy.yAxis((int8_t)output[0]);
 
-			m.update_fingers(buttons.latest_values);
-			bout = m.match_button();
-			if (bout==8){
-				joy.releaseAll();
+		m.update_fingers(buttons.changes_values);
+		for(uint8_t i=0;i<4;i++){
+			if(m.fingers[i]){
+       				 joy.press(i+1);
 			}
-			else if(joy.get_buttons()!=bout){
-				joy.press(bout);
+			else{
+				joy.release(i+1);
 			}
-			std::cout<<"output button: "<<(int)bout<<"\n";
-
-
-		std::cout<<"x: "<<(int)output[1]-128<<"y: "<<(int)output[0]-128<<"\n";
+    		}
+		std::cout<<"x: "<<(int)output[1]<<"y: "<<(int)output[0]<<"\n";
+		//std::cout<<"x: "<<m.raw_axis[1]<<"y: "<<m.raw_axis[0]<<"\n";
 		//std::cout<<m.fingers[0]<<"/n";
-		//std::cout<<"one: "<<buttons.latest_values[0]<<" | "<<buttons.latest_values[1]<<" | "<<buttons.latest_values[2]<<" | "<<buttons.latest_values[3]<<"\n";
+
+
+		//std::cout<<"one: "<<m.fingers[3]<<" | "<<buttons.changes_values[2]<<"\n";//<<" | "<<buttons.changes_values[1]<<" | "<<buttons.changes_values[2]<<" | "<<buttons.changes_values[3]<<"\n";
+
+//		usleep(1000);
 	}
 	buttons.stop();
 }
