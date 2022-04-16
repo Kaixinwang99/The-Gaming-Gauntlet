@@ -117,7 +117,7 @@ This project is using Git to control the version, you can check the repository t
 
 ### License
 
-Haven't choose yet
+GNU General Public License v3.0
 
 ### Acknowledgements
 

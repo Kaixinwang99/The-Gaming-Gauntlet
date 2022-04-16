@@ -24,11 +24,14 @@ class mainlib{
          * use bool fingers list to defind which button is being pressed
          * @return void
          */
+		bool first=true;
+		float x_offset,y_offset,z_offset;
 		std::array<bool,4> fingers {false, false, false, false};
-		std::array<uint8_t,2> getAxis(void);
-		void setAxis(std::array<uint8_t,2>);
+		std::array<int8_t,2> getAxis(void);
+		void setAxis(std::array<int8_t,2>);
+		std::array<float,2> raw_axis {0.0,0.0};
 	private:
-		std::array<uint8_t,2> axis {0,0};
+		std::array<int8_t,2> axis {0,0};
 		/** unit x-axis, unit y-axit output for the joystick**/
 		
 		/** record which finger is bending **/
