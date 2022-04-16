@@ -114,6 +114,8 @@ The project is built by a team from MSc student in University of Glasgow
 * [Natalia Ibagon](https://github.com/nibagon) 
 * [Marycarmen Flores Lopez](https://github.com/marycarmen1999) 
 
+Further information is found on the Wiki Page: [Project Authors and Individual Contributions](![Contributors](https://github.com/Kaixinwang99/The-Gaming-Gauntlet/blob/main/images/TheTeam.svg)).
+
 
 ### Version-Control
 
