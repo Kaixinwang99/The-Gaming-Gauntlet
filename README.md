@@ -30,7 +30,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 ## Social Media
 <div align="center">
  
- [![instagram](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/128px-Instagram_icon.png)](https://wwwhttps://www.instagram.com/gaminggountlet//)
+ [![instagram](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/128px-Instagram_icon.png)](https://www.instagram.com/gaminggountlet//)
  [![twitter](https://cdn.iconscout.com/icon/free/png-128/twitter-203-493159.png)](https://twitter.com/touch_cozy_mood)
  [![youtube](https://github.com/Nishant-web/oneTouchCozyMood/blob/main/Logos/Yotube%20Logo.jpeg)](https://www.youtube.com/channel/UCGz5qoQ1cUQMT-c8PuJZ9TA)
  
