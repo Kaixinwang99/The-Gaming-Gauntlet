@@ -42,50 +42,23 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 - [Acknowledgements](#Acknowledgements)
 
 ### Introduction 
-The Gaming Gauntlet is a new generation controller that aiming to show the world a new way for people interact with concoles.
+The Gaming Gauntlet is the new generation of videogame controllers that aims to show the world a new way for people interact with consoles.
 
 ###### Compatible-Games-and-Keys
-<b>Minecraft</b> 
+<b>Super Mario Bros pc - NES</b>
 |Controller Key|Glove Commands|
 |--------------|--------------|
-| A | Button 1 |
-| S | Button 2 |
-| D | Button 3 |
-| W | Button 4 |
-| E | Close Hand |
-| Space | Flex wrist up |
-| Rotate Mouse| Move Hand in front of the screen |
-| Left Click | Flex Thumb |
+| Jump | Thumb and index finger together |
+| Move Left/Right | Rotate wrist left/right |
+| Special Ability | Ring winger and thumb together |
 
 
-<b>NFS</b>
+<b>Mario Kart pc - NES</b>
 |Controller Key|Glove Commands|
 |--------------|--------------|
-| W | Close Hand |
-| S | Wrist upside down+ fingers closed  |
-| Left/Right arrow | Rotate wrist  |
-| Shift | Button 3+4  |
-| Space | - |
-| C | Flex thumb |
-
-<b>Doom</b>
-|Controller Key|Glove Commands|
-|--------------|--------------|
-| A | Button 1 |
-| A | Button 1 |
-| A | Button 1 |
-| A | Button 1 |
-| A | Button 1 |
-| A | Button 1 |
-
-<b>Mario Kart (64) pc</b>
-|Controller Key|Glove Commands|
-|--------------|--------------|
-| K | Close Hadnd |
-| J | Button 1 |
 | Left/Right (A/S) | Move hand in front of the screen |
-| L | Move L/R +Button 3+4   |
-| E | Wrist up |
+| Drift | Thumb and index finger together  |
+| Object | Thumb and middle finger |
     
 
 ### Installing
@@ -144,7 +117,7 @@ This project is using Git to control the version, you can check the repository t
 
 ### License
 
-Haven't choose yet
+GNU General Public License v3.0
 
 ### Acknowledgements
 

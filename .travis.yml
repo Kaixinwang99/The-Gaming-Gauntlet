@@ -8,9 +8,13 @@ addons:
   apt:
     packages:
       - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
 
 script:
-  - doxygen Doxyfile
+  - doxygen Documentation
 
 deploy:
   provider: pages
