@@ -128,3 +128,6 @@ GNU General Public License v3.0
 
 ### Acknowledgements
 
+Bernd Porr
+Thomas O'Hara
+Nick Bailey
