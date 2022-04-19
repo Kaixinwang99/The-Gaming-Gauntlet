@@ -81,7 +81,15 @@ The Gaming Gauntlet is the new generation of videogame controllers that aims to 
 git clone https://github.com/Kaixinwang99/The-Gaming-Gauntlet.git
 ```
 ### Usage
-a small video demo
+```sh
+cd The-Gaming-Gauntlet
+mkdir build
+cd build
+cmake ..
+make 
+./Gauntlet
+```
+
 ### Project-Architecture
 a random example in the website
 eg:
@@ -127,7 +135,7 @@ This project is using Git to control the version, you can check the repository t
 GNU General Public License v3.0
 
 ### Acknowledgements
-
+We scincerely thank the following faculty of the University of Glasgow for helping and guiding us through this project
 * Bernd Porr
 * Thomas O'Hara
 * Nick Bailey
