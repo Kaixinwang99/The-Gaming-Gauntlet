@@ -70,8 +70,7 @@ The Gaming Gauntlet is the new generation of videogame controllers that aims to 
 
 ###### Configuration-Requirements
 
-1. Linux environment 
-2. C++
+For setting up the raspberry pi as a gaming controller it is necessary to create and deploy a report descriptor that tells the PC that it is an HID 'a controller', for doing this we used the open-sourced milador raspberry_py joystick for 8 buttons that can be found [here](https://github.com/milador/RaspberryPi-Joystick/tree/master/8_Buttons_Joystick)
 
 ###### Install-steps
 
