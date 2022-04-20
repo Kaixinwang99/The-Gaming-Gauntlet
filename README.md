@@ -28,12 +28,10 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 </p>
 
 ## Social Media
-<div align="center">
  
  [![instagram](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/128px-Instagram_icon.png)](https://www.instagram.com/gaminggountlet/)
- [![twitter](https://cdn.iconscout.com/icon/free/png-128/twitter-203-493159.png)](https://twitter.com/touch_cozy_mood)
+ [![twitter](https://cdn.iconscout.com/icon/free/png-128/twitter-203-493159.png)](https://twitter.com/GamingGountlet)
  [![youtube](https://github.com/Nishant-web/oneTouchCozyMood/blob/main/Logos/Yotube%20Logo.jpeg)](https://www.youtube.com/channel/UCEDrEHumIzCC4Mwqvb8Ef9w)
- 
  
 ## Table of Contects
 - [Introduction](#Introduction)
@@ -72,8 +70,7 @@ The Gaming Gauntlet is the new generation of videogame controllers that aims to 
 
 ###### Configuration-Requirements
 
-1. Linux environment 
-2. C++
+For setting up the raspberry pi as a gaming controller it is necessary to create and deploy a report descriptor that tells the PC that it is an HID 'a controller', for doing this we used the open-sourced milador raspberry_py joystick for 8 buttons that can be found [here](https://github.com/milador/RaspberryPi-Joystick/tree/master/8_Buttons_Joystick)
 
 ###### Install-steps
 
@@ -83,30 +80,15 @@ The Gaming Gauntlet is the new generation of videogame controllers that aims to 
 git clone https://github.com/Kaixinwang99/The-Gaming-Gauntlet.git
 ```
 ### Usage
-a small video demo
-### Project-Architecture
-a random example in the website
-eg:
-
+```sh
+cd The-Gaming-Gauntlet
+mkdir build
+cd build
+cmake ..
+make 
+./Gauntlet
 ```
-filetree 
-├── ARCHITECTURE.md
-├── LICENSE.txt
-├── README.md
-├── /account/
-├── /bbs/
-├── /docs/
-│  ├── /rules/
-│  │  ├── backend.txt
-│  │  └── frontend.txt
-├── manage.py
-├── /oa/
-├── /static/
-├── /templates/
-├── useless.md
-└── /util/
 
-```
 
 ### Contributing
 
@@ -115,6 +97,8 @@ The project is built by a team from MSc student in University of Glasgow
 * [Abhijith Vajjal Sampathkrishna](https://github.com/ajsampathk) 
 * [Natalia Ibagon](https://github.com/nibagon) 
 * [Marycarmen Flores Lopez](https://github.com/marycarmen1999) 
+
+Further information is found on our Wiki Page: [Project Authors and Individual Contributions](https://github.com/Kaixinwang99/The-Gaming-Gauntlet/wiki/Project-Authors-and-Individual-Contributions).
 
 
 ### Version-Control
@@ -127,4 +111,7 @@ This project is using Git to control the version, you can check the repository t
 GNU General Public License v3.0
 
 ### Acknowledgements
-
+We scincerely thank the following faculty of the University of Glasgow for helping and guiding us through this project
+* Bernd Porr
+* Thomas O'Hara
+* Nick Bailey

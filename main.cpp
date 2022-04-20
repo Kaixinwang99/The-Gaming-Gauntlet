@@ -31,8 +31,9 @@ int main(int, char**){
   	ADS1115settings s;
 	s.samplingRate = ADS1115settings::FS64HZ;
 	buttons.start(s);	
-
+	
 	joy.begin("/dev/hidg0");
+	std::cout<<"Gauntlet Initialized..\nSending Commands to PC"<<"\n";
 	while(true){
 		imu.read_magnetometer_data(&x,&y,&z);
 		m.update_axis(x,y,z);
@@ -50,7 +51,7 @@ int main(int, char**){
 				joy.release(i+1);
 			}
     	}
-		std::cout<<"x: "<<(int)output[1]<<"y: "<<(int)output[0]<<"\n";
+		//std::cout<<"x: "<<(int)output[1]<<"y: "<<(int)output[0]<<"\n";
 		//std::cout<<"x: "<<m.raw_axis[1]<<"y: "<<m.raw_axis[0]<<"\n";
 		//std::cout<<m.fingers[0]<<"/n";
 
