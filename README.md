@@ -31,7 +31,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
  
  [![instagram](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/128px-Instagram_icon.png)](https://www.instagram.com/gaminggountlet/)
  [![twitter](https://cdn.iconscout.com/icon/free/png-128/twitter-203-493159.png)](https://twitter.com/GamingGountlet)
- [![youtube](https://github.com/Nishant-web/oneTouchCozyMood/blob/main/Logos/Yotube%20Logo.jpeg)](https://www.youtube.com/channel/UCEDrEHumIzCC4Mwqvb8Ef9w)
+ [![youtube](https://github.com/Kaixinwang99/The-Gaming-Gauntlet/tree/main/images/hd-youtube-logo-png-transparent-background-20.png)](https://www.youtube.com/channel/UCEDrEHumIzCC4Mwqvb8Ef9w)
  
 ## Table of Contects
 - [Introduction](#Introduction)
@@ -39,6 +39,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 - [Installing](#Installing)  
   - [Configuration-Requirements](#Configuration-Requirements)
   - [Install-steps](#Install-steps)
+- [Software-Documentation](#Software-Documentation)
 - [Usage](#Usage)  
 - [Project-Architecture](#Project-Architecture)
 - [Contributing](#Contributing)
@@ -79,6 +80,9 @@ For setting up the raspberry pi as a gaming controller it is necessary to create
 ```sh
 git clone https://github.com/Kaixinwang99/The-Gaming-Gauntlet.git
 ```
+### Software-Documentation
+https://kaixinwang99.github.io/The-Gaming-Gauntlet/
+
 ### Usage
 ```sh
 cd The-Gaming-Gauntlet
