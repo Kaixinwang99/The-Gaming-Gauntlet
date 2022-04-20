@@ -5,10 +5,7 @@ University of Glasgow ENG5220: Real Time Embedded Programming Team Project
 
 <!-- PROJECT LOGO -->
 <br />
-![Contributors](https://img.shields.io/github/contributors/Kaixinwang99/The-Gaming-Gauntlet?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/Kaixinwang99/The-Gaming-Gauntlet?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues-raw/Kaixinwang99/The-Gaming-Gauntlet?style=for-the-badge)
-[![License](https://img.shields.io/github/license/Kaixinwang99/The-Gaming-Gauntlet?style=for-the-badge)](https://github.com/albanjoseph/Signapse/blob/main/LICENSE)
+
 <p align="center">
   <a href="https://github.com/Kaixinwang99/The-Gaming-Gauntlet/">
     <img src="images/logo.jpeg" alt="Logo" width="80" height="80">
