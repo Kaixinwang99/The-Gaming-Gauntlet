@@ -81,7 +81,7 @@ For setting up the raspberry pi as a gaming controller it is necessary to create
 git clone https://github.com/Kaixinwang99/The-Gaming-Gauntlet.git
 ```
 ### Software-Documentation
-https://kaixinwang99.github.io/The-Gaming-Gauntlet/
+Travi CI site: https://kaixinwang99.github.io/The-Gaming-Gauntlet/
 
 ### Usage
 ```sh
