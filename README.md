@@ -90,8 +90,6 @@ make
 ```
 
 
-```
-
 ### Contributing
 
 The project is built by a team from MSc student in University of Glasgow
