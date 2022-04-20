@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['magnetometer_5fready_21',['magnetometer_ready',['../classicm20948.html#a88b6fd35b7f342227d0e5c4d882644b1',1,'icm20948']]],
-  ['mainlib_22',['mainlib',['../classmainlib.html',1,'']]],
-  ['match_5fbutton_23',['match_button',['../classmainlib.html#a6846d4ad64c7e508c232f8aef40b272d',1,'mainlib::match_button(void)'],['../classmainlib.html#a6846d4ad64c7e508c232f8aef40b272d',1,'mainlib::match_button(void)'],['../classmainlib.html#a6846d4ad64c7e508c232f8aef40b272d',1,'mainlib::match_button(void)']]]
+  ['magnetometer_5fready_23',['magnetometer_ready',['../classicm20948.html#a88b6fd35b7f342227d0e5c4d882644b1',1,'icm20948']]],
+  ['match_5fbutton_24',['match_button',['../classGaunlet.html#afa20ddfd1fdccaaa37dd7552b5fde8d5',1,'Gaunlet::match_button(void)'],['../classGaunlet.html#afa20ddfd1fdccaaa37dd7552b5fde8d5',1,'Gaunlet::match_button(void)']]]
 ];

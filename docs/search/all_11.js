@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xaxis_47',['xAxis',['../classJoyLib.html#af98cf1c1b286758ec4bc9630706e5201',1,'JoyLib']]]
+  ['yaxis_48',['yAxis',['../classJoyLib.html#a3090a1974ee81cf7feb990d4da5a6e99',1,'JoyLib']]]
 ];

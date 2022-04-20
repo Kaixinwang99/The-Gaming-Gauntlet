@@ -1,0 +1,128 @@
+\hypertarget{classGaunlet}{}\doxysection{Gaunlet Class Reference}
+\label{classGaunlet}\index{Gaunlet@{Gaunlet}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGaunlet_a31382bde17b5f6b2900e6c89cdd27a76}\label{classGaunlet_a31382bde17b5f6b2900e6c89cdd27a76}} 
+void {\bfseries update\+\_\+axis} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{classGaunlet_aa898c3e58c4274bd9cc35aadafba3138}{update\+\_\+fingers}} (float flex\+\_\+sensor\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classGaunlet_afa20ddfd1fdccaaa37dd7552b5fde8d5}{match\+\_\+button}} (void)
+\begin{DoxyCompactList}\small\item\em turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGaunlet_a7cc59ce515fd1bced913b3f7b7c8008a}\label{classGaunlet_a7cc59ce515fd1bced913b3f7b7c8008a}} 
+std\+::array$<$ int8\+\_\+t, 2 $>$ {\bfseries get\+Axis} (void)
+\item 
+\mbox{\Hypertarget{classGaunlet_a5b030099a21f3c10daab85ce5b4895ce}\label{classGaunlet_a5b030099a21f3c10daab85ce5b4895ce}} 
+void {\bfseries set\+Axis} (std\+::array$<$ int8\+\_\+t, 2 $>$)
+\item 
+\mbox{\Hypertarget{classGaunlet_a31382bde17b5f6b2900e6c89cdd27a76}\label{classGaunlet_a31382bde17b5f6b2900e6c89cdd27a76}} 
+void {\bfseries update\+\_\+axis} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{classGaunlet_aa898c3e58c4274bd9cc35aadafba3138}{update\+\_\+fingers}} (float flex\+\_\+sensor\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classGaunlet_afa20ddfd1fdccaaa37dd7552b5fde8d5}{match\+\_\+button}} (void)
+\begin{DoxyCompactList}\small\item\em turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGaunlet_a11f5c7f4a98a167047ac6aaa1571ce9d}\label{classGaunlet_a11f5c7f4a98a167047ac6aaa1571ce9d}} 
+std\+::array$<$ int8\+\_\+t, 2 $>$ {\bfseries get\+Axis} (void)
+\item 
+\mbox{\Hypertarget{classGaunlet_a5b030099a21f3c10daab85ce5b4895ce}\label{classGaunlet_a5b030099a21f3c10daab85ce5b4895ce}} 
+void {\bfseries set\+Axis} (std\+::array$<$ int8\+\_\+t, 2 $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGaunlet_a1c757e355edf7f748ef3d5b7b653cf3b}{first}} =true
+\begin{DoxyCompactList}\small\item\em use bool fingers list to defind which button is being pressed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGaunlet_a4f4e0bb636a3860c501b3ddc391613f1}\label{classGaunlet_a4f4e0bb636a3860c501b3ddc391613f1}} 
+float {\bfseries x\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classGaunlet_af35dc2182c662f6e47dd95e9f10080f2}\label{classGaunlet_af35dc2182c662f6e47dd95e9f10080f2}} 
+float {\bfseries y\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classGaunlet_a14e0d57d4499dd08dfe9c5e37c83e235}\label{classGaunlet_a14e0d57d4499dd08dfe9c5e37c83e235}} 
+float {\bfseries z\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classGaunlet_a4d611a3eaf3ba40aed7c835b1166d2f0}\label{classGaunlet_a4d611a3eaf3ba40aed7c835b1166d2f0}} 
+std\+::array$<$ bool, 4 $>$ {\bfseries fingers} \{false, false, false, false\}
+\item 
+\mbox{\Hypertarget{classGaunlet_a7047da6ad05a484a279fd57a23346725}\label{classGaunlet_a7047da6ad05a484a279fd57a23346725}} 
+std\+::array$<$ float, 2 $>$ {\bfseries raw\+\_\+axis} \{0.\+0,0.\+0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGaunlet_afa20ddfd1fdccaaa37dd7552b5fde8d5}\label{classGaunlet_afa20ddfd1fdccaaa37dd7552b5fde8d5}} 
+\index{Gaunlet@{Gaunlet}!match\_button@{match\_button}}
+\index{match\_button@{match\_button}!Gaunlet@{Gaunlet}}
+\doxysubsubsection{\texorpdfstring{match\_button()}{match\_button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t Gaunlet\+::match\+\_\+button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGaunlet_afa20ddfd1fdccaaa37dd7552b5fde8d5}\label{classGaunlet_afa20ddfd1fdccaaa37dd7552b5fde8d5}} 
+\index{Gaunlet@{Gaunlet}!match\_button@{match\_button}}
+\index{match\_button@{match\_button}!Gaunlet@{Gaunlet}}
+\doxysubsubsection{\texorpdfstring{match\_button()}{match\_button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t Gaunlet\+::match\+\_\+button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+turning rpi\+\_\+ads1115 output into bool output for each finger need to find the limit of bending value 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGaunlet_aa898c3e58c4274bd9cc35aadafba3138}\label{classGaunlet_aa898c3e58c4274bd9cc35aadafba3138}} 
+\index{Gaunlet@{Gaunlet}!update\_fingers@{update\_fingers}}
+\index{update\_fingers@{update\_fingers}!Gaunlet@{Gaunlet}}
+\doxysubsubsection{\texorpdfstring{update\_fingers()}{update\_fingers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gaunlet\+::update\+\_\+fingers (\begin{DoxyParamCaption}\item[{float}]{flex\+\_\+sensor\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGaunlet_aa898c3e58c4274bd9cc35aadafba3138}\label{classGaunlet_aa898c3e58c4274bd9cc35aadafba3138}} 
+\index{Gaunlet@{Gaunlet}!update\_fingers@{update\_fingers}}
+\index{update\_fingers@{update\_fingers}!Gaunlet@{Gaunlet}}
+\doxysubsubsection{\texorpdfstring{update\_fingers()}{update\_fingers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gaunlet\+::update\+\_\+fingers (\begin{DoxyParamCaption}\item[{float}]{flex\+\_\+sensor\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+turning the \mbox{\hyperlink{classicm20948}{icm20948}} output float xyz into int8\+\_\+t x,y for the input of the joystick need to use porjection 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGaunlet_a1c757e355edf7f748ef3d5b7b653cf3b}\label{classGaunlet_a1c757e355edf7f748ef3d5b7b653cf3b}} 
+\index{Gaunlet@{Gaunlet}!first@{first}}
+\index{first@{first}!Gaunlet@{Gaunlet}}
+\doxysubsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily bool Gaunlet\+::first =true}
+
+
+
+use bool fingers list to defind which button is being pressed 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gaunlet.\+h\item 
+Gaunlet.\+cpp\end{DoxyCompactItemize}

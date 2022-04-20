@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yaxis_48',['yAxis',['../classJoyLib.html#a3090a1974ee81cf7feb990d4da5a6e99',1,'JoyLib']]]
+  ['_7eads1115rpi_49',['~ADS1115rpi',['../classADS1115rpi.html#a3dec47dc3242290468f21396df0d71a5',1,'ADS1115rpi']]]
 ];

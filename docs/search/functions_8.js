@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_5ffingers_79',['update_fingers',['../classmainlib.html#a12bd8f60a22fbdab9cc466b867f3c47c',1,'mainlib::update_fingers(float flex_sensor[4])'],['../classmainlib.html#a12bd8f60a22fbdab9cc466b867f3c47c',1,'mainlib::update_fingers(float flex_sensor[4])'],['../classmainlib.html#a12bd8f60a22fbdab9cc466b867f3c47c',1,'mainlib::update_fingers(float flex_sensor[4])']]]
+  ['update_5ffingers_79',['update_fingers',['../classGaunlet.html#aa898c3e58c4274bd9cc35aadafba3138',1,'Gaunlet::update_fingers(float flex_sensor[4])'],['../classGaunlet.html#aa898c3e58c4274bd9cc35aadafba3138',1,'Gaunlet::update_fingers(float flex_sensor[4])']]]
 ];

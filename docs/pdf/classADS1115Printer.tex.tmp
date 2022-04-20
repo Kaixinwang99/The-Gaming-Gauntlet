@@ -12,6 +12,10 @@ Collaboration diagram for A\+D\+S1115\+Printer\+:
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{classADS1115Printer_a06edaf232ca82567e741580132983db2}{has\+Sample}} (float v)
+\begin{DoxyCompactList}\small\item\em Called when a new sample is available. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classADS1115Printer_a06edaf232ca82567e741580132983db2}{has\+Sample}} (float v)
+\begin{DoxyCompactList}\small\item\em Called when a new sample is available. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classADS1115Printer_a06edaf232ca82567e741580132983db2}{has\+Sample}} (float v)
 \begin{DoxyCompactList}\small\item\em Called when a new sample is available. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -19,11 +23,17 @@ virtual void \mbox{\hyperlink{classADS1115Printer_a06edaf232ca82567e741580132983
 \mbox{\Hypertarget{classADS1115Printer_a2d22f33b2ee33c0ddec9ea52c2580532}\label{classADS1115Printer_a2d22f33b2ee33c0ddec9ea52c2580532}} 
 unsigned {\bfseries current\+\_\+channel} =0
 \item 
-\mbox{\Hypertarget{classADS1115Printer_aeaa3faa804c765691c23232598626606}\label{classADS1115Printer_aeaa3faa804c765691c23232598626606}} 
+\mbox{\Hypertarget{classADS1115Printer_afdd11aaaba0674e412c3d717bc965997}\label{classADS1115Printer_afdd11aaaba0674e412c3d717bc965997}} 
 float {\bfseries latest\+\_\+values} \mbox{[}4\mbox{]} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
 \item 
-\mbox{\Hypertarget{classADS1115Printer_aab3b96b32e21396bb2a2f120c1a48715}\label{classADS1115Printer_aab3b96b32e21396bb2a2f120c1a48715}} 
-\mbox{\hyperlink{classmainlib}{mainlib}} {\bfseries m}
+\mbox{\Hypertarget{classADS1115Printer_a17da5dcafa41d63a4a57c5ce4e316485}\label{classADS1115Printer_a17da5dcafa41d63a4a57c5ce4e316485}} 
+float {\bfseries previous\+\_\+values} \mbox{[}4\mbox{]} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
+\item 
+\mbox{\Hypertarget{classADS1115Printer_a94c6566a469d2287042405e7c95fdc9d}\label{classADS1115Printer_a94c6566a469d2287042405e7c95fdc9d}} 
+float {\bfseries changes\+\_\+values} \mbox{[}4\mbox{]} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
+\item 
+\mbox{\Hypertarget{classADS1115Printer_a1352495a74473c781e9b06422a235a0a}\label{classADS1115Printer_a1352495a74473c781e9b06422a235a0a}} 
+uint8\+\_\+t {\bfseries output}
 \end{DoxyCompactItemize}
 
 
@@ -31,7 +41,45 @@ float {\bfseries latest\+\_\+values} \mbox{[}4\mbox{]} =\{0.\+0,0.\+0,0.\+0,0.\+
 \mbox{\Hypertarget{classADS1115Printer_a06edaf232ca82567e741580132983db2}\label{classADS1115Printer_a06edaf232ca82567e741580132983db2}} 
 \index{ADS1115Printer@{ADS1115Printer}!hasSample@{hasSample}}
 \index{hasSample@{hasSample}!ADS1115Printer@{ADS1115Printer}}
-\doxysubsubsection{\texorpdfstring{hasSample()}{hasSample()}}
+\doxysubsubsection{\texorpdfstring{hasSample()}{hasSample()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void A\+D\+S1115\+Printer\+::has\+Sample (\begin{DoxyParamCaption}\item[{float}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called when a new sample is available. 
+
+This needs to be implemented in a derived class by the client. Defined as abstract. 
+\begin{DoxyParams}{Parameters}
+{\em sample} & Voltage from the selected channel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classADS1115rpi_a515633c671efe89d43b814d4682440af}{A\+D\+S1115rpi}}.
+
+\mbox{\Hypertarget{classADS1115Printer_a06edaf232ca82567e741580132983db2}\label{classADS1115Printer_a06edaf232ca82567e741580132983db2}} 
+\index{ADS1115Printer@{ADS1115Printer}!hasSample@{hasSample}}
+\index{hasSample@{hasSample}!ADS1115Printer@{ADS1115Printer}}
+\doxysubsubsection{\texorpdfstring{hasSample()}{hasSample()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void A\+D\+S1115\+Printer\+::has\+Sample (\begin{DoxyParamCaption}\item[{float}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called when a new sample is available. 
+
+This needs to be implemented in a derived class by the client. Defined as abstract. 
+\begin{DoxyParams}{Parameters}
+{\em sample} & Voltage from the selected channel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classADS1115rpi_a515633c671efe89d43b814d4682440af}{A\+D\+S1115rpi}}.
+
+\mbox{\Hypertarget{classADS1115Printer_a06edaf232ca82567e741580132983db2}\label{classADS1115Printer_a06edaf232ca82567e741580132983db2}} 
+\index{ADS1115Printer@{ADS1115Printer}!hasSample@{hasSample}}
+\index{hasSample@{hasSample}!ADS1115Printer@{ADS1115Printer}}
+\doxysubsubsection{\texorpdfstring{hasSample()}{hasSample()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily virtual void A\+D\+S1115\+Printer\+::has\+Sample (\begin{DoxyParamCaption}\item[{float}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
@@ -49,6 +97,7 @@ Implements \mbox{\hyperlink{classADS1115rpi_a515633c671efe89d43b814d4682440af}{A
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
+I\+C\+M20948/main.\+cpp\item 
 ads1115\+\_\+printer.\+cpp\end{DoxyCompactItemize}
